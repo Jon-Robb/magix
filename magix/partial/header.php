@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/styles.css">
     <script defer src="js/javascript.js"></script>
-    <script defer src="js/page-login.js"></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magix</title>
 </head>
