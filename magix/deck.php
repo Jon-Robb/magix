@@ -8,7 +8,7 @@
 ?>
 
 <div>
-<iframe src="https://magix.apps-de-cours.com/server/#/deck/votre-clé-ici">
+<iframe src="https://magix.apps-de-cours.com/server/#/deck/votre-clé-ici" onload="applyStyles(this)">
 </iframe>
 
 </div>

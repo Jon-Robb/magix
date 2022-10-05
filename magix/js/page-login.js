@@ -1,7 +1,6 @@
     let loginBox = document.querySelector(".loginBox");
     let passwordBox = document.querySelector(".passwordBox");
     let connexionBox = document.querySelector(".connexionBox");
-    let enregistrerButton = document.querySelector(".enregistrerButton")
 
     loginBox.onfocus = () => {
         loginBox.style.width = "280px";
@@ -30,12 +29,4 @@
 
     connexionBox.onmouseout = () => {
         connexionBox.style.background = "#191919"
-    }
-
-    enregistrerButton.onmouseover = () => {
-        enregistrerButton.style.opacity = "0.5";
-    }
-
-    enregistrerButton.onmouseout = () => {
-        enregistrerButton.style.opacity = "1";
     }

@@ -16,6 +16,7 @@
             <input type="text" name="username" placeholder="Nom d'usager" required class="loginBox">
             <input type="password" name="pwd" placeholder="Mot de passe" required class="passwordBox">
             <input type="submit" name="" value="Connexion" class="connexionBox">
+
         </div>
     </form>
 
