@@ -22,15 +22,18 @@
                     $hasConnectionError = true;
                 }
                 else {
-                    var_dump($result);exit;
+                    var_dump($result);
                     $key = $result->key;
+                    $_SESSION["key"] = $key;
+                    header("location:lobby.php");
                 }
-
+                
             }
-            
-            return compact("hasConnectionError", "key");
 
-
+            // if(isset($key)){
+            //     return compact("key");
+            // }
+            return compact("hasConnectionError");
         
         }
     }
