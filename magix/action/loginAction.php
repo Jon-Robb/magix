@@ -15,14 +15,14 @@
                 $data = [];
                 $data["username"] = $_POST["username"];
                 $data["password"] = $_POST["pwd"];
-                $_SESSION["user"] = $_POST["username"];
+                $_SESSION["username"] = $_POST["username"];
                 $result = parent::callAPI("signin", $data);
 
                 if ($result == "INVALID_USERNAME_PASSWORD") {
                     $hasConnectionError = true;
                 }
                 else {
-                    var_dump($result);
+                    $_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
                     $key = $result->key;
                     $_SESSION["key"] = $key;
                     header("location:lobby.php");
@@ -30,9 +30,6 @@
                 
             }
 
-            // if(isset($key)){
-            //     return compact("key");
-            // }
             return compact("hasConnectionError");
         
         }

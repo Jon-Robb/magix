@@ -1,10 +1,10 @@
 <?php
     require_once("action/CommonAction.php");
 
-    class PopularityAction extends CommonAction {
+    class AjaxStateAction extends CommonAction {
 
         public function __construct() {
-            parent::__construct(CommonAction::$VISIBILITY_MEMBER);
+            parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
         }
 
         protected function executeAction() {
