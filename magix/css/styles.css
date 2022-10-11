@@ -25,6 +25,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #191919;
+    opacity: 85%; 
     text-align: center;
     border-radius: 1em;   
 }
@@ -34,6 +35,7 @@
     text-transform: uppercase;
     font-weight: 500;
     background: #191919;
+    
 }
 
 .sign-in-input-group input[type = "text"], .sign-in-input-group input[type = "password"]{

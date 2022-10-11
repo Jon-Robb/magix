@@ -1,7 +1,7 @@
 <?php
-    require_once("action/loginAction.php");
+    require_once("action/IndexAction.php");
 
-    $action = new loginAction();
+    $action = new IndexAction();
     $data = $action->execute();
 
     require_once("partial/header.php");
