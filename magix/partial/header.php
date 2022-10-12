@@ -10,7 +10,7 @@
     <title>Magix</title>
 </head>
 <div class="header">
-
+<!-- 
         <p>
             Bonjour! <?= $data["username"] ?>
         </p>
@@ -24,5 +24,5 @@
             <?php
                 }
             ?>
-               
+                -->
 </div>

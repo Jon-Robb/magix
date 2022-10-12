@@ -1,7 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Header */
+/* .header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+} */
 
+/* index/Log-in */
 .index-body{
-    background: url('../img/chinese_tank_by_sinto_risky_d9uojbp.jpg');
+    background: url('../img/BattleTech_batlefield.jpg');
     background-repeat: no-repeat;
     background-size: auto;
     height: 100vh;
@@ -9,13 +22,6 @@
 }
 
 
-
-.header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
 
 .sign-in-input-group{
     width: 300px;
@@ -69,6 +75,13 @@
     cursor: pointer;
 }
 
+/* Lobby */
+.lobby-body{
+    background: url("../img/hangar_lightsOff.jpg");
+}
 
+.btn-jouer{
+    
+}
 
 

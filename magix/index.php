@@ -12,7 +12,18 @@
 <form action="" method="post" autocomplete="off">
         <div class="sign-in-input-group">
             <h1>Connexion</h1>
-            <div id="api-message"></div>
+            <div id="api-message">
+            <?php
+            if($data["hasConnectionError"]){?>
+
+                <div style="color: red;">
+                    Nom d'usager ou mot de passe invalide
+                </div>
+            <?php
+            } 
+            ?>
+
+            </div>
             <input type="text" name="username" placeholder="Nom d'usager" required class="loginBox">
             <input type="password" name="pwd" placeholder="Mot de passe" required class="passwordBox">
             <input type="submit" name="" value="Connexion" class="connexionBox">
@@ -58,15 +69,6 @@
 </div> -->
 
 
-<?php
-        if($data["hasConnectionError"]){?>
-
-            <div style="color: red;">
-                Nom d'usager ou mot de passe invalide
-            </div>
-        <?php
-           } 
-        ?>
 
 <?php
     require_once("partial/footer.php");
