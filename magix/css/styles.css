@@ -1,14 +1,16 @@
+/* variables */
+:root{
+    --main--family:'DO Futuristic', sans serif;
+    --btn-font-color: #ffff;
+    --usergreetings-font-color: #d0902f;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
-    --main--family:'DO Futuristic', sans serif;
-    --btn-font-color: #ffff;
-    --usergreetings-font-color: #d0902f;
-}
 
 /* Header */
 /* .header{
@@ -23,10 +25,9 @@
     background: url('../img/BattleTech_batlefield.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
 }
-
 
 
 .sign-in-input-group{
@@ -87,7 +88,7 @@
 .lobby-body{
     background: url("../img/hangar_lightsOff.jpg");
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     display: grid;
     grid-template-rows: 1fr 6fr 1fr;
 }
@@ -201,6 +202,15 @@ iframe{
       outline: none;
   }
 
+
+  /* game layout */
+
+  .game-body{
+      width: 100vw;
+      height: 100vh;
+      background:url("../img/Battle-tech_cockpit.jpg") no-repeat center center fixed;
+      background-size: cover;
+  }
 
 
 
