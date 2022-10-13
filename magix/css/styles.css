@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root{
+    --main--family:'DO Futuristic', sans serif;
+    --btn-font-color: #ffff;
+    --usergreetings-font-color: #d0902f;
+}
+
 /* Header */
 /* .header{
     display: flex;
@@ -18,14 +24,17 @@
     background-size: cover;
     height: 100vh;
     width: 100%;
+    display: flex;
 }
 
 
 
 .sign-in-input-group{
-    width: 300px;
+    width: 400px;
     padding: 40px;
     position: absolute;
+    display: flex;
+    flex-direction: column;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -87,7 +96,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    font-family: var(--main--family);
+    color: var(--usergreetings-font-color);
 }
 
 .menu-section{
@@ -122,7 +132,7 @@ iframe{
     align-items: flex-end;
 }
 
-form{
+#lobby-form{
     height: 100%;
 }
 
@@ -146,20 +156,20 @@ form{
       color: inherit;
   }
 
-  button, button:before {
+  .btn-lobby, .btn-lobby:before {
       display: flex;
       align-items: center;
       justify-content: center;
       align-content: center;
   }
   
-  button {
+  .btn-lobby {
       width: 150px;
       height: 50px;
       cursor: pointer;
-      font-family: 'Play', sans-serif;
+      font-family: var(--main--family);
       font-size: 20px;
-      color: white;
+      color: var(--btn-font-color);
       border: none;
       border-radius: 25px;
       background: url("../img/hazard-stripes-wallpaper.jpg");
@@ -168,7 +178,7 @@ form{
       transition: 1s;
   }
   
-  button:before {
+  .btn-lobby:before {
       width: 150px;
       height: 50px;
       background: rgba(0,0,0,0.6);
@@ -177,19 +187,21 @@ form{
       transition: 500ms;
   }
   
-  button:hover:before {
+  .btn-lobby:hover:before {
       background: rgba(0,0,0,0);
       text-shadow: 1px 1px 1px black;
   }
   
-  button:hover {
+  .btn-lobby:hover {
       background-position: center;
       box-shadow: 0px 0px 10px rgba(232, 218, 26, 0.5);
   }
   
-  button:focus {
+  .btn-lobby:focus {
       outline: none;
   }
+
+
 
 
 
