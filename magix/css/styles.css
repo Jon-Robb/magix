@@ -345,10 +345,11 @@ iframe{
 
   .battlefield-card{
 
+    min-width: 50px;
     width: 10%;
     height: 90%;
     border: solid black 2px;
-    margin: 5px;
+    margin: 10px;
     border-radius: 3px;
     display: grid;
     grid-template-rows: 2fr 1fr 1fr;
@@ -376,7 +377,7 @@ iframe{
       display: flex;
   }
   
-  .card-mana > p {
+  .card-mana > p{
       position: absolute;
       z-index: 1;
      
@@ -385,6 +386,22 @@ iframe{
         font-weight: bolder;
         color:black; 
   }
+
+  .card-attack{
+      background: url("../img/Gamma_Cannon.webp") no-repeat;
+      background-size: 100%;
+      background-position-y: -15px;
+  }
+
+  .card-health{
+
+    background: url(../img/health+mana/PNG/redgear.png) no-repeat;
+    background-size: 50%;
+    background-position-x: 20px;
+    background-position-y: 10px;
+  }
+
+  
 
   .card-mana > img{
       right: 15px;
@@ -409,6 +426,8 @@ iframe{
       position: relative;
 
   }
+
+
 
   .card-infos{
       color: var(--usergreetings-font-color);
