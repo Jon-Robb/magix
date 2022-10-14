@@ -224,11 +224,31 @@ iframe{
       background:url("../img/Battle-tech_cockpit.jpg") no-repeat center center fixed;
       background-size: cover;
       display: grid;
-      grid-template-rows: 1fr 5fr 2fr;
+      grid-template-rows: 1fr 5fr 2.5fr;
       
   }
 
   /* Ennemy section */
+
+  .ennemy-section-cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        
+        
+  }
+
+  .ennemy-small-card{
+      width: 10%;
+      height: 75%;
+      border: solid black 2px;
+      margin: 1px;
+      background: url("../img/BattleTech_cardback.jpg") no-repeat center   ;
+      background-size:cover;
+      
+  }
+
   .ennemy-section{
       display: grid;
       grid-template-columns: 3fr 1fr 2fr 1fr 3fr;
@@ -316,7 +336,109 @@ iframe{
       grid-template-columns: 12fr 1fr;
       grid-template-rows: 1fr 1fr;
   }
-  .battlefield-player-cards{
+
+  .battlefield-ennemy-cards-box, .battlefield-player-cards-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .battlefield-card{
+
+    width: 10%;
+    height: 90%;
+    border: solid black 2px;
+    margin: 5px;
+    border-radius: 3px;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    background: #191919;
+    
+
+  }
+
+  .card-pic{
+      background: url("../img/tank-thunderbolt.jpg")   ;
+    background-repeat: no-repeat;
+    background-size: 100% 100% ;
+  }
+
+  .card-top{
+      display: flex;
+      justify-content: space-between;
+      height: 50%;
+  }
+
+  .card-mana{
+    
+      height:100%;
+      width: 50%;
+      display: flex;
+  }
+  
+  .card-mana > p {
+      position: absolute;
+      z-index: 1;
+     
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: x-large;
+        font-weight: bolder;
+        color:black; 
+  }
+
+  .card-mana > img{
+      right: 15px;
+      bottom: 5px;
+  }
+
+  .card-icon > img{
+    left: 10px;
+    bottom: 5px;
+}
+
+  
+  .card-icon{
+      height: 100%;
+      width: 50%;
+      text-align: end;
+  }
+
+  .card-icon > img, .card-mana > img{
+      max-height: 100%;
+      max-width: 100%;
+      position: relative;
+
+  }
+
+  .card-infos{
+      color: var(--usergreetings-font-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+  }
+
+  .card-stats{
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+  }
+
+  .card-health, .card-attack{
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      color: var(--usergreetings-font-color);
+  }
+
+  .card-health{
+      justify-content: flex-end;
+  }
+
+
+  .battlefield-player-cards-box{
       grid-row-start: 2;
   }
 
@@ -404,6 +526,19 @@ iframe{
     font-weight: bolder;
     color:black;
     grid-row: 1/3; 
+   }
+
+   .player-cards{
+       display: flex;
+       justify-content: center;
+        align-items: center;
+   }
+
+   .player-hand-card{
+       width: 10%;
+        height: 75%;
+        border: solid black 2px;
+        margin: 1px;
    }
 
    .player-btn-section{

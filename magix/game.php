@@ -11,10 +11,20 @@
     <!-- section de l'adversaire -->
     <div class="ennemy-section">
         <div class="ennemy-section-cards">
+            <div class="ennemy-small-card"></div>
+            <div class="ennemy-small-card"></div>
+            <div class="ennemy-small-card"></div>
+            <div class="ennemy-small-card"></div>
+            <div class="ennemy-small-card"></div>
+            <div class="ennemy-small-card"></div>
+            <div class="ennemy-small-card"></div>
+            <div class="ennemy-small-card"></div>
 
+
+            
         </div>
         <div class="ennemy-name">
-            Athlas Prime
+            Atlas Prime
         </div>
         <div class="ennemy-pic-box">
         <div class="ennemy-pic">
@@ -42,10 +52,385 @@
 
     <!-- Section champs de bataille -->
     <div class="battlefield-section">
-        <div class="battlefield-ennemy-cards">
+        <div class="battlefield-ennemy-cards-box">
 
+            
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <!-- <img src="../magix/img/tank-thunderbolt.jpg" alt=""> -->
+                        <div class="card-top">
+                            <div class="card-mana">
+                                <p>4</p>
+                                <img src="../magix//img/health+mana/PNG/gaz.png" alt="">
+                            </div>
+                            <div class="card-icon">
+                                <img src="../magix/img/protection.png" alt="">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+           
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                
         </div>
-        <div class="battlefield-player-cards">
+        <div class="battlefield-player-cards-box">
+        <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+
 
         </div>
         <div class="battlefield-timer">
@@ -76,9 +461,196 @@
                 30
             </div>
         </div>
-        <div class="player-cards">
 
+
+        <div class="player-cards">
+        <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+                <div class="battlefield-card"> 
+                    <div class="card-pic">
+                        <div class="card-top">
+                            <div class="card-mana">
+                                4
+                            </div>
+                            <div class="card-icon">
+                                icon
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-infos">
+                        stealth
+                    </div>
+                    <div class="card-stats">
+                        <div class="card-attack">
+                            5
+                        </div>
+                        <div class="card-health">
+                            2
+                        </div>
+                    </div>
+                </div>
+        
         </div>
+
+
         <div class="player-btn-section">
             <div class="player-btn-heropower">
                 
