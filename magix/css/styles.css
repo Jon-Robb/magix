@@ -1,6 +1,6 @@
 /* variables */
 :root{
-    --main--family:'DO Futuristic', sans serif;
+    --main-font-family:'DO Futuristic', sans serif;
     --btn-font-color: #ffff;
     --usergreetings-font-color: #d0902f;
 }
@@ -26,7 +26,15 @@
     background-size: cover;
     height: 100vh;
     width: 100vw;
-    display: flex;
+    
+}
+
+.index-titre{
+    text-align: center;
+    position: relative;
+    padding-top: 5em;
+    font-family: var(--main-font-family);
+    color: #191919;
 }
 
 
@@ -50,6 +58,7 @@
     text-transform: uppercase;
     font-weight: 500;
     background: #191919;
+    font-family: var(--main-font-family);
     
 }
 
@@ -66,6 +75,7 @@
     color: white;
     border-radius: 24px;
     transition: 0.25s;
+    font-family: var(--main-font-family);
 }
 
 .sign-in-input-group input[type = "submit"]
@@ -82,6 +92,8 @@
     border-radius: 24px;
     transition: 0.25s;
     cursor: pointer;
+    font-family: var(--main-font-family);
+
 }
 
 /* Lobby */
@@ -195,7 +207,7 @@ iframe{
   
   .btn-lobby:hover {
       background-position: center;
-      box-shadow: 0px 0px 10px rgba(232, 218, 26, 0.5);
+      box-shadow: 0px 0px 10px var(--usergreetings-font-color);
   }
   
   .btn-lobby:focus {
@@ -210,8 +222,55 @@ iframe{
       height: 100vh;
       background:url("../img/Battle-tech_cockpit.jpg") no-repeat center center fixed;
       background-size: cover;
+      display: grid;
+      grid-template-rows: 1fr 5fr 2fr;
+      
   }
 
+  .ennemy-section{
+      display: grid;
+      grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+  }
+
+  .battlefield-section{
+      display: grid;
+      grid-template-columns: 12fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  }
+  .battlefield-player-cards{
+      grid-row-start: 2;
+  }
+
+  .battlefield-timer{
+      grid-row: span 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .timer-box{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;   
+      font-family: var(--main-font-family);
+      color: var(--usergreetings-font-color);
+      font-size: xx-large;
+      font-weight: bolder;    
+    }
+
+    .hourglass > img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+
+   .player-section{
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+   }
 
 
 

@@ -8,6 +8,11 @@
 ?>
 <script defer src="js/page-login.js"></script>
 <div class="index-body">
+    <div class="index-titre">
+        <h1>
+            MagixWarrior Mercenaries
+        </h1>
+    </div>
 
 <form action="" method="post" autocomplete="off">
         <div class="sign-in-input-group">
