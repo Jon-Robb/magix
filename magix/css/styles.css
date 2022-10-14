@@ -231,7 +231,9 @@ iframe{
   /* Ennemy section */
   .ennemy-section{
       display: grid;
-      grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+      grid-template-columns: 3fr 1fr 2fr 1fr 3fr;
+      background: rgba(0,0,0,0.3);
+      
       
   }
 
@@ -240,9 +242,10 @@ iframe{
       grid-template-columns: repeat(3, 1fr);
   }
 
+
   .ennemy-life{
     background: url(../img/health+mana/PNG/redgear.png) center;
-    background-size: 65% auto;
+    background-size: 50% auto;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -251,11 +254,12 @@ iframe{
     font-size: x-large;
     font-weight: bolder;
     color:#ffff; 
+    
   }
 
   .ennemy-mana{
     background: url(../img/health+mana/PNG/gaz.png) center;
-    background-size: 65% auto;
+    background-size: 50% auto;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -268,7 +272,7 @@ iframe{
 
   .ennemy-card-number{
     background: url(../img/health+mana/PNG/carte.png) center;
-    background-size: 100% auto;
+    background-size: 85% auto;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -279,6 +283,31 @@ iframe{
     color:black; 
   }
 
+  .ennemy-name, .ennemy-class{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffff;
+      font-weight: bolder;
+      font-size: large;
+  }
+
+  .ennemy-pic-box{
+
+    background: rgba(0 , 0, 0, 0.3);
+
+  }
+  .ennemy-pic{
+
+      width: 100%;
+      height: 100%;
+     background: url("../img/classes-img/warrior-atlas-icon.png") ;
+     background-repeat: no-repeat;
+     background-position-x: center;
+
+  }
+
+  
 
   
   /* Battlefield */
@@ -299,7 +328,7 @@ iframe{
   }
 
   .timer-box{
-      height: 100%;
+      min-height: 75%;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -309,6 +338,8 @@ iframe{
       color: var(--usergreetings-font-color);
       font-size: xx-large;
       font-weight: bolder;    
+      background: rgba(0,0,0,0.5);
+      border-radius: 1em;
     }
 
     .hourglass > img{
@@ -321,6 +352,7 @@ iframe{
    .player-section{
       display: grid;
       grid-template-columns: 1fr 5fr 1fr;
+      background: rgba(0,0,0,0.3);
    }
 
    .player-components{

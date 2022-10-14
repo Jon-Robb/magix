@@ -14,13 +14,16 @@
 
         </div>
         <div class="ennemy-name">
-
+            Athlas Prime
         </div>
+        <div class="ennemy-pic-box">
         <div class="ennemy-pic">
-
+            <!-- <img src="./img/classes-img/warrior-atlas-icon.png" alt=""> -->
         </div>
+        </div>
+        
         <div class="ennemy-class">
-
+            Warrior
         </div>
         <div class="ennemy-components">
             <!-- Place holders, a remplacer avec les variables des objets json -->
