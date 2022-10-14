@@ -77,7 +77,16 @@
 
         </div>
         <div class="player-btn-section">
+            <div class="player-btn-heropower">
+                
+            </div>
+            <div class="player-btn-endturn">
 
+            </div>
+            <div class="player-btn-chat">
+
+            </div>
+            
         </div>
     </div>
 </div>
