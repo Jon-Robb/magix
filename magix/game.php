@@ -23,6 +23,15 @@
 
         </div>
         <div class="ennemy-components">
+            <div class="ennemy-life">
+                20
+            </div>
+            <div class="ennemy-mana">
+                1
+            </div>
+            <div class="ennemy-card-number">
+                30
+            </div>
 
         </div>
     </div>
@@ -42,7 +51,7 @@
                     50
                 </div>
                 <div class="hourglass">
-                    <img src="../magix/img/hourglasses/yellow/frame_01.png" alt="">           
+                    <img src="../magix/img/hourglasses/yellow/frame_01.png" alt="sablier">           
                 </div> 
             </div>
         </div>
