@@ -23,6 +23,7 @@
 
         </div>
         <div class="ennemy-components">
+            <!-- Place holders, a remplacer avec les variables des objets json -->
             <div class="ennemy-life">
                 20
             </div>
@@ -60,7 +61,17 @@
     <!-- Section cartes du joueur -->
     <div class="player-section">
         <div class="player-components">
-
+        
+            <div class="player-life">
+                20
+            </div>
+            <div class="player-mana">
+                1
+            </div>
+     
+            <div class="player-card-number">
+                30
+            </div>
         </div>
         <div class="player-cards">
 
