@@ -7,25 +7,13 @@
     require_once("partial/header.php");
 ?>
 
+<script defer src="js/game.js"></script>
+
 <div class="game-body">
     <!-- section de l'adversaire -->
     <div class="ennemy-section">
-        <div class="ennemy-section-cards">
-            <div class="ennemy-small-card"></div>
-            <div class="ennemy-small-card"></div>
-            <div class="ennemy-small-card"></div>
-            <div class="ennemy-small-card"></div>
-            <div class="ennemy-small-card"></div>
-            <div class="ennemy-small-card"></div>
-            <div class="ennemy-small-card"></div>
-            <div class="ennemy-small-card"></div>
-
-
-            
-        </div>
-        <div class="ennemy-name">
-            Atlas Prime
-        </div>
+        <div class="ennemy-section-cards"></div>
+        <div class="ennemy-name"></div>
         <div class="ennemy-pic-box">
         <div class="ennemy-pic">
             <!-- <img src="./img/classes-img/warrior-atlas-icon.png" alt=""> -->
@@ -36,17 +24,9 @@
             Warrior
         </div>
         <div class="ennemy-components">
-            <!-- Place holders, a remplacer avec les variables des objets json -->
-            <div class="ennemy-life">
-                20
-            </div>
-            <div class="ennemy-mana">
-                1
-            </div>
-            <div class="ennemy-card-number">
-                30
-            </div>
-
+            <div class="ennemy-life"></div>
+            <div class="ennemy-mana"></div>
+            <div class="ennemy-card-number"></div>
         </div>
     </div>
 
@@ -210,20 +190,11 @@
 
     <!-- Section cartes du joueur -->
     <div class="player-section">
-        <div class="player-components">
-        
-            <div class="player-life">
-                20
-            </div>
-            <div class="player-mana">
-                1
-            </div>
-     
-            <div class="player-card-number">
-                30
-            </div>
+        <div class="player-components">    
+            <div class="player-life"></div>
+            <div class="player-mana"></div>    
+            <div class="player-card-number"></div>
         </div>
-
 
         <div class="player-cards">
         

@@ -6,7 +6,7 @@
 
     require_once("partial/header.php");
 ?>
-<script defer src="js/page-login.js"></script>
+<script defer src="js/page-index.js"></script>
 <div class="index-body">
     <div class="index-titre">
         <h1>

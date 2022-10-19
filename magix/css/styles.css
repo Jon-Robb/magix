@@ -112,7 +112,18 @@
     justify-content: center;
     font-family: var(--main--family);
     color: var(--usergreetings-font-color);
+    justify-content: space-between;
 }
+
+
+
+.deco{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .menu-section{
     

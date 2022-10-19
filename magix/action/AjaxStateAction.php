@@ -9,6 +9,9 @@
 
         protected function executeAction() {
             
-            return [];
+            $data = [];
+            $data["key"] = $_SESSION["key"];
+            $result = parent::callAPI("games/state", $data);
+            return compact("result");
         }
     }
