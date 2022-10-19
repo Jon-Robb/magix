@@ -388,7 +388,7 @@ iframe{
       display: flex;
   }
   
-  .card-mana > p{
+  .mana-cost{
       position: absolute;
       z-index: 1;
      
@@ -446,6 +446,7 @@ iframe{
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-size: smaller;
       
   }
 
