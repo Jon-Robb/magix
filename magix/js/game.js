@@ -119,6 +119,33 @@ const state = () => {
                     battlefieldCard.append(cardStats);
                     playerCards.append(battlefieldCard);
 
+                    battlefieldCard.onclick = () => {
+                        console.log("click player card")
+                        if (data.yourTurn){
+                            let formData = new FormData();
+                            formData.append("PLAY", "PLAY");
+                            formData.append("UID", data.hand[i].uid);
+                            console.log(data.hand[i].uid);
+                            fetch("ajax-state.php", {
+                                method:"POST",
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(result => {
+                                console.log(result)
+                            })
+                        }
+                    }
+
+                    // heroPower.onclick = () => {
+                    //     console.log("click hero power");
+                    //     formData.append("HERO_POWER", "HERO_POWER");
+                    //     fetch("ajax-state.php", {
+                    //         method: "POST",
+                    //         body: formData
+                    //     })              
+                    // }
+
                 }
 
 

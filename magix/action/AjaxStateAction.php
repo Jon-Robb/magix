@@ -26,6 +26,11 @@
                 $data["type"] = $_POST["SURRENDER"];
                 $result = parent::callAPI("games/action", $data);
             }
+            else if(!empty($_POST["PLAY"])){
+                $data["type"] = $_POST["PLAY"];
+                $data["uid"] = $_POST["UID"];
+                $result = parent::callAPI("games/action", $data);
+            }
             else{
                 $result = parent::callAPI("games/state", $data);
             }
