@@ -7,6 +7,7 @@ const state = () => {
             console.log(data); // contient les cartes/état du jeu.
 
 
+            let battlefieldCardSelectedUid = 0;
             if (data.opponent) {
 
                 // La main de l'ennemi
@@ -120,7 +121,6 @@ const state = () => {
                     playerCards.append(battlefieldCard);
 
                     battlefieldCard.onclick = () => {
-                        console.log("click player card")
                         if (data.yourTurn){
                             let formData = new FormData();
                             formData.append("PLAY", "PLAY");
@@ -135,21 +135,8 @@ const state = () => {
                                 console.log(result)
                             })
                         }
-                    }
-
-                    // heroPower.onclick = () => {
-                    //     console.log("click hero power");
-                    //     formData.append("HERO_POWER", "HERO_POWER");
-                    //     fetch("ajax-state.php", {
-                    //         method: "POST",
-                    //         body: formData
-                    //     })              
-                    // }
-
+                    }               
                 }
-
-
-
 
                 // le champ de bataille
                 // cartes de l'ennemi
@@ -207,6 +194,31 @@ const state = () => {
                     battlefieldCard.append(cardStats);
                     BFEnnemycards.append(battlefieldCard);
 
+                    battlefieldCard.onclick = () => {
+                        console.log("clicked battlefield ennemy card")
+                        if (data.yourTurn){
+                            if(battlefieldCardSelectedUid != 0){
+                                let formData = new FormData();
+                                formData.append("ATTACK", "ATTACK");
+                                formData.append("bf-UID", battlefieldCardSelectedUid);
+                                formData.append("targetuid", data.opponent.board[i].uid);
+                                fetch("ajax-state.php", {
+                                    method: "POST",
+                                    body: formData
+                                })
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result);
+                                })
+                            }
+                            
+                        }
+                    } 
+
+                   
+                    
+
+
                 }
 
                 // Cartes du joueur sur le champ de bataille
@@ -263,6 +275,14 @@ const state = () => {
                     battlefieldCard.append(cardInfo);
                     battlefieldCard.append(cardStats);
                     BFPlayerCards.append(battlefieldCard);
+
+                    battlefieldCard.onclick = () => {
+                        console.log("clicked battlefield player card")
+                        if (data.yourTurn){
+                            battlefieldCardSelectedUid = data.board[i].uid
+                            console.log(battlefieldCardSelectedUid)
+                        }
+                    } 
 
                 }
 
