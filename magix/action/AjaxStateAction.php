@@ -11,7 +11,17 @@
             
             $data = [];
             $data["key"] = $_SESSION["key"];
-            $result = parent::callAPI("games/state", $data);
+
+            
+
+            if(!empty($_POST["HERO_POWER"])){
+                $data["type"] = $_POST["HERO_POWER"];
+                $result = parent::callAPI("games/action", $data);
+            }
+            else{
+                $result = parent::callAPI("games/state", $data);
+            }
+
             return compact("result");
         }
     }
