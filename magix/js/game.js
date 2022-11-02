@@ -252,41 +252,43 @@ const state = () => {
 
                 // hero power
                 let heroPower = document.querySelector(".player-btn-heropower");
-                if (data.heroPowerAlreadyUsed) {
+                if (data.heroPowerAlreadyUsed == true) {
                     heroPower.style.opacity = "0.5";
                     heroPower.style.cursor = "initial";
                     heroPower.style.transform = "rotate(180deg)";
                 }
                 if(data.yourTurn == true){
+                    let formData = new FormData();
                     if(data.heroPowerAlreadyUsed == false){
                         heroPower.onclick = () => {
                             console.log("click hero power");
-                            let formData = new FormData();
                             formData.append("HERO_POWER", "HERO_POWER");
                             fetch("ajax-state.php", {
                                 method: "POST",
                                 body: formData
-                            })
-                            .then(response => response.json())
-                            .then(result => {
-                                console.log(result);
-                            })               
+                            })              
                         }
                     }
                     let endTurnBtn = document.querySelector(".player-btn-endturn");
                     endTurnBtn.onclick = () => {
-                        console.log("click end turn");
-                        let formData = new FormData();
                         formData.append("END_TURN", "END_TURN");
                         fetch("ajax-state.php", {
                             method: "POST",
                             body: formData
-                        })
-                        .then(response => response.json())
-                        .then(result => {
-                            console.log(result);
+                        })    
+                    }
+                    let surrenderBtn = document.querySelector(".player-btn-surrender");
+                    surrenderBtn.onclick = () => {
+                        formData.append("SURRENDER", "SURRENDER");
+                        fetch("ajax-state.php", {
+                            method : "POST", 
+                            body: formData
                         })
                     }
+
+                    
+
+
                 }
              
                     

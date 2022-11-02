@@ -72,6 +72,9 @@ require_once("partial/header.php");
             <div class="player-btn-chat">
 
             </div>
+            <div class="player-btn-surrender">
+                
+            </div>
 
         </div>
     </div>
