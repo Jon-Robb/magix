@@ -18,6 +18,10 @@
                 $data["type"] = $_POST["HERO_POWER"];
                 $result = parent::callAPI("games/action", $data);
             }
+            else if(!empty($_POST["END_TURN"])){
+                $data["type"] = $_POST["END_TURN"];
+                $result = parent::callAPI("games/action", $data);
+            }
             else{
                 $result = parent::callAPI("games/state", $data);
             }

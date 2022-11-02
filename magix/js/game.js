@@ -278,7 +278,14 @@ const state = () => {
                         console.log("click end turn");
                         let formData = new FormData();
                         formData.append("END_TURN", "END_TURN");
-                        fetch("ajax-state")
+                        fetch("ajax-state.php", {
+                            method: "POST",
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(result => {
+                            console.log(result);
+                        })
                     }
                 }
              
