@@ -70,6 +70,7 @@ const state = () => {
                     // Creation de toute l'arborescence de la carte 
                     let battlefieldCard = document.createElement("div");
                     battlefieldCard.classList.add("battlefield-card");
+                    battlefieldCard.classList.add("player-card");
                     let cardPic = document.createElement("div");
                     cardPic.classList.add("card-pic");
                     let cardTop = document.createElement("div");
@@ -238,21 +239,14 @@ const state = () => {
 
                 }
 
-
-
-
-
-
-
-
-
+                
                 // Le timer
                 let timer = document.querySelector(".countdown");
                 timer.innerHTML = "";
-                if (data.yourTurn) {
+                if (data.yourTurn == true) {
                     timer.innerHTML = data.remainingTurnTime;
                 }
-                else if (!data.yourTurn) {
+                else if (data.yourTurn == false) {
                     timer.innerHTML = data.opponent.remainingTurnTime;
                 }
 
@@ -263,9 +257,37 @@ const state = () => {
                     heroPower.style.cursor = "initial";
                     heroPower.style.transform = "rotate(180deg)";
                 }
-
-
+                if(data.yourTurn == true){
+                    if(data.heroPowerAlreadyUsed == false){
+                        heroPower.onclick = () => {
+                            console.log("click hero power");
+                            let formData = new FormData();
+                            formData.append("HERO_POWER", "HERO_POWER");
+                            fetch("ajax-state.php", {
+                                method: "POST",
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(result => {
+                                console.log(result);
+                            })               
+                        }
+                    }
+                    let endTurnBtn = document.querySelector(".player-btn-endturn");
+                    endTurnBtn.onclick = () => {
+                        console.log("click end turn");
+                        let formData = new FormData();
+                        formData.append("END_TURN", "END_TURN");
+                        fetch("ajax-state")
+                    }
+                }
+             
+                    
+                
             }
+
+            // Logique de hero power
+            
 
 
 
