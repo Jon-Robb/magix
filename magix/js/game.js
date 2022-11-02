@@ -214,11 +214,27 @@ const state = () => {
                             
                         }
                     } 
+                }
 
-                   
-                    
-
-
+                let avatarEnnemi = document.querySelector(".ennemy-pic");
+                avatarEnnemi.onclick = () => {
+                    if(data.yourTurn){
+                        console.log(battlefieldCardSelectedUid);
+                        if(battlefieldCardSelectedUid != 0){
+                            let formData = new FormData();
+                            formData.append("ATTACK", "ATTACK");
+                            formData.append("bf-UID", battlefieldCardSelectedUid);
+                            formData.append("targetuid", 0);
+                            fetch("ajax-state.php", {
+                                method: "POST",
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(result => {
+                                console.log(result);
+                            })
+                        }
+                    }
                 }
 
                 // Cartes du joueur sur le champ de bataille
