@@ -1,3 +1,5 @@
+let battlefieldCardSelectedUid;
+
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST"        // l’API (games/state)
@@ -7,7 +9,6 @@ const state = () => {
             console.log(data); // contient les cartes/état du jeu.
 
 
-            let battlefieldCardSelectedUid = 0;
             if (data.opponent) {
 
                 // La main de l'ennemi
@@ -202,6 +203,7 @@ const state = () => {
                                 formData.append("ATTACK", "ATTACK");
                                 formData.append("bf-UID", battlefieldCardSelectedUid);
                                 formData.append("targetuid", data.opponent.board[i].uid);
+                                console.log(battlefieldCardSelectedUid);
                                 fetch("ajax-state.php", {
                                     method: "POST",
                                     body: formData
@@ -216,26 +218,7 @@ const state = () => {
                     } 
                 }
 
-                let avatarEnnemi = document.querySelector(".ennemy-pic");
-                avatarEnnemi.onclick = () => {
-                    if(data.yourTurn){
-                        console.log(battlefieldCardSelectedUid);
-                        if(battlefieldCardSelectedUid != 0){
-                            let formData = new FormData();
-                            formData.append("ATTACK", "ATTACK");
-                            formData.append("bf-UID", battlefieldCardSelectedUid);
-                            formData.append("targetuid", 0);
-                            fetch("ajax-state.php", {
-                                method: "POST",
-                                body: formData
-                            })
-                            .then(response => response.json())
-                            .then(result => {
-                                console.log(result);
-                            })
-                        }
-                    }
-                }
+                
 
                 // Cartes du joueur sur le champ de bataille
                 let BFPlayerCards = document.querySelector(".battlefield-player-cards-box");
@@ -298,7 +281,28 @@ const state = () => {
                             battlefieldCardSelectedUid = data.board[i].uid
                             console.log(battlefieldCardSelectedUid)
                         }
-                    } 
+                    }
+                    
+                    let avatarEnnemi = document.querySelector(".ennemy-pic");
+                    avatarEnnemi.onclick = () => {
+                    if(data.yourTurn){
+                        console.log(battlefieldCardSelectedUid);
+                        if(battlefieldCardSelectedUid != 0){
+                            let formData = new FormData();
+                            formData.append("ATTACK", "ATTACK");
+                            formData.append("bf-UID", battlefieldCardSelectedUid);
+                            formData.append("targetuid", 0);
+                            fetch("ajax-state.php", {
+                                method: "POST",
+                                body: formData
+                            })
+                            .then(response => response.json())
+                            .then(result => {
+                                console.log(result);
+                            })
+                        }
+                    }
+                }
 
                 }
 
