@@ -582,6 +582,7 @@ iframe{
     background: url(../img/button-components/icone-heropower-fist.png) center;
     background-size: 70% auto;
     background-repeat: no-repeat;
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
 
     
    }
@@ -616,7 +617,13 @@ iframe{
    }
 
    .playable-card{
-       border: 5px solid green;
+       border: 2px solid green;
+       cursor: pointer;
+       transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+   }
+
+   .stealth-card{
+       opacity: 0.5;
    }
 
 

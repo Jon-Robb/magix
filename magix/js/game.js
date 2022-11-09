@@ -98,6 +98,7 @@ const state = () => {
                         cardIcon.append(icon);
                     }
 
+                    
                     let cardInfo = document.createElement("div");
                     cardInfo.classList.add("card-infos");
                     cardInfo.innerHTML = data.hand[i].mechanics;
@@ -181,6 +182,11 @@ const state = () => {
                         cardIcon.append(icon);
                     }
 
+                    if (data.opponent.board[i].mechanics == "Stealth"){
+                        battlefieldCard.style.opacity = "0.7";
+                    }
+
+
                     let cardInfo = document.createElement("div");
                     cardInfo.classList.add("card-infos");
                     cardInfo.innerHTML = data.opponent.board[i].mechanics;
@@ -250,12 +256,16 @@ const state = () => {
                     cardIcon.classList.add("card-icon");
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.board[i].mechanics[i] == "Taunt") {
+                    if (data.board[i].mechanics == "Taunt") {
 
                         let icon = document.createElement("img");
                         icon.src = "../magix/img/protection.png";
                         cardIcon.append(icon);
                     }
+                    if (data.board[i].mechanics == "Stealth"){
+                        battlefieldCard.style.opacity = "0.7";
+                    }
+
 
                     let cardInfo = document.createElement("div");
                     cardInfo.classList.add("card-infos");
@@ -279,6 +289,10 @@ const state = () => {
                     battlefieldCard.append(cardInfo);
                     battlefieldCard.append(cardStats);
                     BFPlayerCards.append(battlefieldCard);
+
+                    if (data.yourTurn && data.board[i].state == "IDLE"){
+                        battlefieldCard.classList.add("playable-card");
+                    } 
 
                     battlefieldCard.onclick = () => {
                         if (data.yourTurn) {
@@ -317,18 +331,16 @@ const state = () => {
 
                 let heroPower = document.querySelector(".player-btn-heropower");
 
-                if (data.yourTurn) {
+                if (data.yourTurn == true) {
                     let formData = new FormData();
-
 
                     if (data.heroPowerAlreadyUsed || data.mp <= 1) {
                         heroPower.style.opacity = "0.5";
                         heroPower.style.cursor = "initial";
                         heroPower.style.transform = "rotate(180deg)";
                     }
-                    else if (data.heroPowerAlreadyUsed) {
+                    else if (!data.heroPowerAlreadyUsed) {
                         heroPower.onclick = () => {
-                            console.log("click hero power");
                             formData.append("HERO_POWER", "HERO_POWER");
                             fetch("ajax-state.php", {
                                 method: "POST",
@@ -359,6 +371,11 @@ const state = () => {
                     }
                 }
             }
+
+            if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON"){
+                window.location.replace("lobby.php")
+            }
+
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 
