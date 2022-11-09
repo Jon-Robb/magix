@@ -19,7 +19,7 @@ require_once("partial/header.php");
         <div class="button-section">
             <div class="button-section-firstCol">
                 <form action="" method="POST" name="btn-play">
-                <input type="hidden" name="btn-play" value="true">
+                    <input type="hidden" name="btn-play" value="true">
                     <button class="btn-lobby btn-jouer">
                         <span>
                             Jouer solo

@@ -1,14 +1,17 @@
 <?php
-    require_once("action/CommonAction.php");
+require_once("action/CommonAction.php");
 
-    class PopularityAction extends CommonAction {
+class PopularityAction extends CommonAction
+{
 
-        public function __construct() {
-            parent::__construct(CommonAction::$VISIBILITY_MEMBER);
-        }
-
-        protected function executeAction() {
-            
-            return [];
-        }
+    public function __construct()
+    {
+        parent::__construct(CommonAction::$VISIBILITY_MEMBER);
     }
+
+    protected function executeAction()
+    {
+
+        return [];
+    }
+}

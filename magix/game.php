@@ -38,7 +38,7 @@ require_once("partial/header.php");
         </div>
         <div class="battlefield-player-cards-box">
 
-    
+
 
         </div>
         <div class="battlefield-timer">
@@ -59,7 +59,7 @@ require_once("partial/header.php");
             <div class="player-card-number"></div>
         </div>
 
-        <div class="player-cards">  </div>
+        <div class="player-cards"> </div>
 
 
         <div class="player-btn-section">
@@ -73,7 +73,7 @@ require_once("partial/header.php");
 
             </div>
             <div class="player-btn-surrender">
-                
+
             </div>
 
         </div>

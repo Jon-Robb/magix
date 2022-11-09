@@ -1,10 +1,10 @@
 <?php
-    require_once("action/IndexAction.php");
+require_once("action/IndexAction.php");
 
-    $action = new IndexAction();
-    $data = $action->execute();
+$action = new IndexAction();
+$data = $action->execute();
 
-    require_once("partial/header.php");
+require_once("partial/header.php");
 ?>
 <script defer src="js/page-index.js"></script>
 <div class="index-body">
@@ -14,19 +14,19 @@
         </h1>
     </div>
 
-<form action="" method="post" autocomplete="off">
+    <form action="" method="post" autocomplete="off">
         <div class="sign-in-input-group">
             <h1>Connexion</h1>
             <div id="api-message">
-            <?php
-            if($data["hasConnectionError"]){?>
+                <?php
+                if ($data["hasConnectionError"]) { ?>
 
-                <div style="color: red;">
-                    Nom d'usager ou mot de passe invalide
-                </div>
-            <?php
-            } 
-            ?>
+                    <div style="color: red;">
+                        Nom d'usager ou mot de passe invalide
+                    </div>
+                <?php
+                }
+                ?>
 
             </div>
             <input type="text" name="username" placeholder="Nom d'usager" required class="loginBox">
@@ -38,7 +38,7 @@
 
 </div>
 
-    
+
 
 
 
@@ -76,4 +76,4 @@
 
 
 <?php
-    require_once("partial/footer.php");
+require_once("partial/footer.php");

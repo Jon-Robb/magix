@@ -122,21 +122,21 @@ const state = () => {
                     playerCards.append(battlefieldCard);
 
                     battlefieldCard.onclick = () => {
-                        if (data.yourTurn){
+                        if (data.yourTurn) {
                             let formData = new FormData();
                             formData.append("PLAY", "PLAY");
                             formData.append("UID", data.hand[i].uid);
                             console.log(data.hand[i].uid);
                             fetch("ajax-state.php", {
-                                method:"POST",
+                                method: "POST",
                                 body: formData
                             })
-                            .then(response => response.json())
-                            .then(result => {
-                                console.log(result)
-                            })
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result)
+                                })
                         }
-                    }               
+                    }
                 }
 
                 // le champ de bataille
@@ -197,8 +197,8 @@ const state = () => {
 
                     battlefieldCard.onclick = () => {
                         console.log("clicked battlefield ennemy card")
-                        if (data.yourTurn){
-                            if(battlefieldCardSelectedUid != 0){
+                        if (data.yourTurn) {
+                            if (battlefieldCardSelectedUid != 0) {
                                 let formData = new FormData();
                                 formData.append("ATTACK", "ATTACK");
                                 formData.append("bf-UID", battlefieldCardSelectedUid);
@@ -208,17 +208,17 @@ const state = () => {
                                     method: "POST",
                                     body: formData
                                 })
-                                .then(response => response.json())
-                                .then(result => {
-                                    console.log(result);
-                                })
+                                    .then(response => response.json())
+                                    .then(result => {
+                                        console.log(result);
+                                    })
                             }
-                            
+
                         }
-                    } 
+                    }
                 }
 
-                
+
 
                 // Cartes du joueur sur le champ de bataille
                 let BFPlayerCards = document.querySelector(".battlefield-player-cards-box");
@@ -277,36 +277,36 @@ const state = () => {
 
                     battlefieldCard.onclick = () => {
                         console.log("clicked battlefield player card")
-                        if (data.yourTurn){
+                        if (data.yourTurn) {
                             battlefieldCardSelectedUid = data.board[i].uid
                             console.log(battlefieldCardSelectedUid)
                         }
                     }
-                    
+
                     let avatarEnnemi = document.querySelector(".ennemy-pic");
                     avatarEnnemi.onclick = () => {
-                    if(data.yourTurn){
-                        console.log(battlefieldCardSelectedUid);
-                        if(battlefieldCardSelectedUid != 0){
-                            let formData = new FormData();
-                            formData.append("ATTACK", "ATTACK");
-                            formData.append("bf-UID", battlefieldCardSelectedUid);
-                            formData.append("targetuid", 0);
-                            fetch("ajax-state.php", {
-                                method: "POST",
-                                body: formData
-                            })
-                            .then(response => response.json())
-                            .then(result => {
-                                console.log(result);
-                            })
+                        if (data.yourTurn) {
+                            console.log(battlefieldCardSelectedUid);
+                            if (battlefieldCardSelectedUid != 0) {
+                                let formData = new FormData();
+                                formData.append("ATTACK", "ATTACK");
+                                formData.append("bf-UID", battlefieldCardSelectedUid);
+                                formData.append("targetuid", 0);
+                                fetch("ajax-state.php", {
+                                    method: "POST",
+                                    body: formData
+                                })
+                                    .then(response => response.json())
+                                    .then(result => {
+                                        console.log(result);
+                                    })
+                            }
                         }
                     }
-                }
 
                 }
 
-                
+
                 // Le timer
                 let timer = document.querySelector(".countdown");
                 timer.innerHTML = "";
@@ -324,16 +324,16 @@ const state = () => {
                     heroPower.style.cursor = "initial";
                     heroPower.style.transform = "rotate(180deg)";
                 }
-                if(data.yourTurn == true){
+                if (data.yourTurn == true) {
                     let formData = new FormData();
-                    if(data.heroPowerAlreadyUsed == false){
+                    if (data.heroPowerAlreadyUsed == false) {
                         heroPower.onclick = () => {
                             console.log("click hero power");
                             formData.append("HERO_POWER", "HERO_POWER");
                             fetch("ajax-state.php", {
                                 method: "POST",
                                 body: formData
-                            })              
+                            })
                         }
                     }
                     let endTurnBtn = document.querySelector(".player-btn-endturn");
@@ -342,34 +342,18 @@ const state = () => {
                         fetch("ajax-state.php", {
                             method: "POST",
                             body: formData
-                        })    
+                        })
                     }
                     let surrenderBtn = document.querySelector(".player-btn-surrender");
                     surrenderBtn.onclick = () => {
                         formData.append("SURRENDER", "SURRENDER");
                         fetch("ajax-state.php", {
-                            method : "POST", 
+                            method: "POST",
                             body: formData
                         })
                     }
-
-                    
-
-
                 }
-             
-                    
-                
             }
-
-            // Logique de hero power
-            
-
-
-
-
-
-
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 

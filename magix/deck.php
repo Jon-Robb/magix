@@ -1,16 +1,16 @@
 <?php
-    require_once("action/DeckAction.php");
+require_once("action/DeckAction.php");
 
-    $action = new DeckAction();
-    $data = $action->execute();
+$action = new DeckAction();
+$data = $action->execute();
 
-    require_once("partial/header.php");
+require_once("partial/header.php");
 ?>
 
 <div>
-<iframe src="https://magix.apps-de-cours.com/server/#/deck/votre-clé-ici" onload="applyStyles(this)">
-</iframe>
+    <iframe src="https://magix.apps-de-cours.com/server/#/deck/votre-clé-ici" onload="applyStyles(this)">
+    </iframe>
 
 </div>
 <?php
-    require_once("partial/footer.php");
+require_once("partial/footer.php");
