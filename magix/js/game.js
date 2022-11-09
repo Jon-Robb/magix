@@ -121,6 +121,15 @@ const state = () => {
                     battlefieldCard.append(cardStats);
                     playerCards.append(battlefieldCard);
 
+
+                    if (data.mp < data.hand[i].cost) {
+                        battlefieldCard.style.opacity = "0.5";
+                        battlefieldCard.style.cursor = "initial";
+                    }
+                    else if (data.mp >= data.hand[i].cost) {
+                        battlefieldCard.style.cursor = "pointer";
+                    }
+
                     battlefieldCard.onclick = () => {
                         if (data.yourTurn) {
                             let formData = new FormData();
@@ -196,7 +205,6 @@ const state = () => {
                     BFEnnemycards.append(battlefieldCard);
 
                     battlefieldCard.onclick = () => {
-                        console.log("clicked battlefield ennemy card")
                         if (data.yourTurn) {
                             if (battlefieldCardSelectedUid != 0) {
                                 let formData = new FormData();
@@ -213,12 +221,9 @@ const state = () => {
                                         console.log(result);
                                     })
                             }
-
                         }
                     }
                 }
-
-
 
                 // Cartes du joueur sur le champ de bataille
                 let BFPlayerCards = document.querySelector(".battlefield-player-cards-box");
@@ -245,7 +250,7 @@ const state = () => {
                     cardIcon.classList.add("card-icon");
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.board[i].mechanics == "Taunt") {
+                    if (data.board[i].mechanics[i] == "Taunt") {
 
                         let icon = document.createElement("img");
                         icon.src = "../magix/img/protection.png";
@@ -276,10 +281,8 @@ const state = () => {
                     BFPlayerCards.append(battlefieldCard);
 
                     battlefieldCard.onclick = () => {
-                        console.log("clicked battlefield player card")
                         if (data.yourTurn) {
                             battlefieldCardSelectedUid = data.board[i].uid
-                            console.log(battlefieldCardSelectedUid)
                         }
                     }
 
@@ -303,30 +306,27 @@ const state = () => {
                             }
                         }
                     }
-
                 }
-
 
                 // Le timer
                 let timer = document.querySelector(".countdown");
                 timer.innerHTML = "";
-                if (data.yourTurn == true) {
-                    timer.innerHTML = data.remainingTurnTime;
-                }
-                else if (data.yourTurn == false) {
-                    timer.innerHTML = data.opponent.remainingTurnTime;
-                }
+                timer.innerHTML = data.remainingTurnTime;
 
                 // hero power
+
                 let heroPower = document.querySelector(".player-btn-heropower");
-                if (data.heroPowerAlreadyUsed == true) {
-                    heroPower.style.opacity = "0.5";
-                    heroPower.style.cursor = "initial";
-                    heroPower.style.transform = "rotate(180deg)";
-                }
-                if (data.yourTurn == true) {
+
+                if (data.yourTurn) {
                     let formData = new FormData();
-                    if (data.heroPowerAlreadyUsed == false) {
+
+
+                    if (data.heroPowerAlreadyUsed || data.mp <= 1) {
+                        heroPower.style.opacity = "0.5";
+                        heroPower.style.cursor = "initial";
+                        heroPower.style.transform = "rotate(180deg)";
+                    }
+                    else if (data.heroPowerAlreadyUsed) {
                         heroPower.onclick = () => {
                             console.log("click hero power");
                             formData.append("HERO_POWER", "HERO_POWER");
@@ -335,7 +335,12 @@ const state = () => {
                                 body: formData
                             })
                         }
+                        heroPower.style.opacity = "1";
+                        heroPower.style.cursor = "pointer";
+                        heroPower.style.transform = "initial";
                     }
+                    
+
                     let endTurnBtn = document.querySelector(".player-btn-endturn");
                     endTurnBtn.onclick = () => {
                         formData.append("END_TURN", "END_TURN");

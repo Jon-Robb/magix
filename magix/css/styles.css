@@ -615,4 +615,8 @@ iframe{
        cursor: pointer;
    }
 
+   .playable-card{
+       border: 5px solid green;
+   }
+
 
