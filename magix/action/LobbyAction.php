@@ -33,6 +33,18 @@ class LobbyAction extends CommonAction
             }
         }
 
+        if (!empty($_POST["btn-quitter"])){
+            parent::callAPI("signout", $data);
+            header("location:index.php");
+            session_unset();
+            session_destroy();
+            session_start();
+        }
+
+        if (!empty($_POST["btn-historique"])){
+            header("location:popularity.php");
+        }
+
 
         return compact("key");
     }

@@ -112,7 +112,8 @@
     justify-content: center;
     font-family: var(--main--family);
     color: var(--usergreetings-font-color);
-    justify-content: space-between;
+    justify-content: space-around;
+    font-size: xx-large;
 }
 
 

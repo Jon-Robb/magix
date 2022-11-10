@@ -11,9 +11,9 @@ require_once("partial/header.php");
 
     <div class="user-greetings">
         <p> Bonjour Mech-Guerrier <strong> <?= $data["username"] ?></strong> </p>
-        <div class="deco">
+        <!-- <div class="deco">
             <a href="?logout=true">Deconnection</a>
-        </div>
+        </div> -->
     </div>
     <div class="menu-section">
         <div class="button-section">
@@ -21,10 +21,7 @@ require_once("partial/header.php");
                 <form action="" method="POST" name="btn-play">
                     <input type="hidden" name="btn-play" value="true">
                     <button class="btn-lobby btn-jouer">
-                        <span>
-                            Jouer solo
-                            <!-- <a href="game.php">Jouer solo</a> -->
-                        </span>
+                        Jouer solo
                     </button>
                 </form>
                 <form action="" method="POST">
@@ -32,11 +29,16 @@ require_once("partial/header.php");
                     <button class="btn-lobby btn-pratique"> Pratique solo </button>
                 </form>
 
+                <form action="" method="POST">
+                    <input type="hidden" name="btn-historique" value="true">
                 <button class="btn-lobby btn-historique"> Historique </button>
+                </form>
+                <form action="" method="POST">
+                    <input type="hidden" name="btn-quitter" value="true">
                 <button class="btn-lobby btn-quitter"> Quitter </button>
+                </form>
             </div>
         </div>
-        <!-- style="width:700px;height:240px;" -->
         <div class="chat-section">
             <iframe onload="applyStyles(this)" src="https://magix.apps-de-cours.com/server/#/chat/<?= $data["key"] ?>">
             </iframe>
