@@ -358,6 +358,7 @@ iframe{
   .battlefield-card{
 
     min-width: 50px;
+    max-height: 190px;
     width: 10%;
     height: 90%;
     border: solid black 2px;

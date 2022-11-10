@@ -71,4 +71,21 @@ class PgsqlDAO
 
         $statement->execute();
     }
+
+    public static function getTopTen(){
+
+        $connection = Connection::getConnection();
+
+        $statement = $connection->prepare(
+            "SELECT * FROM most_used_cards
+            ORDER BY nb_fois_utilise
+            DESC LIMIT 10;"
+        );
+
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $statement->execute();
+
+        return $statement->fetchAll();
+
+    }
 }

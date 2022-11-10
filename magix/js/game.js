@@ -91,14 +91,14 @@ const state = () => {
                     cardIcon.classList.add("card-icon");
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.hand[i].mechanics == "Taunt") {
+                    if (data.hand[i].mechanics.includes("Taunt")) {
 
                         let icon = document.createElement("img");
                         icon.src = "../magix/img/protection.png";
                         cardIcon.append(icon);
                     }
 
-                    
+
                     let cardInfo = document.createElement("div");
                     cardInfo.classList.add("card-infos");
                     cardInfo.innerHTML = data.hand[i].mechanics;
@@ -111,6 +111,7 @@ const state = () => {
                     cardHealth.classList.add("card-health");
                     cardHealth.innerHTML = data.hand[i].hp;
 
+                    // Assemblage de la carte
                     cardStats.append(cardAttack);
                     cardStats.append(cardHealth);
                     cardMana.append(manaCost);
@@ -136,14 +137,29 @@ const state = () => {
                             let formData = new FormData();
                             formData.append("PLAY", "PLAY");
                             formData.append("UID", data.hand[i].uid);
-                            console.log(data.hand[i].uid);
                             fetch("ajax-state.php", {
                                 method: "POST",
                                 body: formData
                             })
                                 .then(response => response.json())
                                 .then(result => {
-                    
+                                    
+                                    if (typeof result != 'string' || result instanceof String) {
+                                        console.log("carte jouée");
+
+                                        let formData = new FormData();
+                                        formData.append("id", data.hand[i].id);
+                                        formData.append("cost", data.hand[i].cost);
+                                        formData.append("hp", data.hand[i].hp);
+                                        formData.append("attack", data.hand[i].atk);
+                                        formData.append("mechanics", data.hand[i].mechanics);
+                                        
+                                        fetch("ajax-state.php", {
+                                            method: "POST",
+                                            body: formData
+                                        })
+
+                                    }
                                     console.log(result)
                                 })
                         }
@@ -176,14 +192,14 @@ const state = () => {
                     cardIcon.classList.add("card-icon");
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.opponent.board[i].mechanics == "Taunt") {
+                    if (data.opponent.board[i].mechanics.includes("Taunt")) {
 
                         let icon = document.createElement("img");
                         icon.src = "../magix/img/protection.png";
                         cardIcon.append(icon);
                     }
 
-                    if (data.opponent.board[i].mechanics == "Stealth"){
+                    if (data.opponent.board[i].mechanics.includes("Stealth")) {
                         battlefieldCard.style.opacity = "0.7";
                     }
 
@@ -257,13 +273,13 @@ const state = () => {
                     cardIcon.classList.add("card-icon");
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.board[i].mechanics == "Taunt") {
+                    if (data.board[i].mechanics.includes("Taunt")) {
 
                         let icon = document.createElement("img");
                         icon.src = "../magix/img/protection.png";
                         cardIcon.append(icon);
                     }
-                    if (data.board[i].mechanics == "Stealth"){
+                    if (data.board[i].mechanics.includes("Stealth")) {
                         battlefieldCard.style.opacity = "0.7";
                     }
 
@@ -291,9 +307,9 @@ const state = () => {
                     battlefieldCard.append(cardStats);
                     BFPlayerCards.append(battlefieldCard);
 
-                    if (data.yourTurn && data.board[i].state == "IDLE"){
+                    if (data.yourTurn && data.board[i].state == "IDLE") {
                         battlefieldCard.classList.add("playable-card");
-                    } 
+                    }
 
                     battlefieldCard.onclick = () => {
                         if (data.yourTurn) {
@@ -352,7 +368,7 @@ const state = () => {
                         heroPower.style.cursor = "pointer";
                         heroPower.style.transform = "initial";
                     }
-                    
+
 
                     let endTurnBtn = document.querySelector(".player-btn-endturn");
                     endTurnBtn.onclick = () => {
@@ -373,7 +389,7 @@ const state = () => {
                 }
             }
 
-            if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON"){
+            if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
                 window.location.replace("lobby.php")
             }
 
