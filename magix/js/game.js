@@ -154,10 +154,16 @@ const state = () => {
                                         formData.append("attack", data.hand[i].atk);
                                         formData.append("mechanics", data.hand[i].mechanics);
                                         
+                                        
                                         fetch("ajax-state.php", {
                                             method: "POST",
                                             body: formData
                                         })
+                                        console.log(formData);
+                                        // .then(response => response.json())
+                                        // .then(result => {
+                                        //     console.log(formData);
+                                        // })
 
                                     }
                                     console.log(result)

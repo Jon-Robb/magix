@@ -1,6 +1,8 @@
 <?php
     require_once("action/CommonAction.php");
 
+     require_once("action/DAO/PgsqlDAO.php");
+
     class AjaxStateAction extends CommonAction {
 
         public function __construct() {
@@ -12,6 +14,14 @@
             $data = [];
             $data["key"] = $_SESSION["key"];
 
+            // if(!empty($_POST["id"])){
+            //     if(!empty(PgsqlDAO::getCard($_POST["id"]))){
+            //         PgsqlDAO::updateCardPlayed($_POST["id"]);       
+            //     }
+            //     else{
+            //         PgsqlDAO::insertNewCard($_POST["id"], $_POST["cost"], $_POST["hp"], $_POST["attack"], $_POST["mechanics"]);
+            //     }
+            // }
             
 
             if(!empty($_POST["HERO_POWER"])){
