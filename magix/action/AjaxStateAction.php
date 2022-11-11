@@ -14,14 +14,14 @@
             $data = [];
             $data["key"] = $_SESSION["key"];
 
-            // if(!empty($_POST["id"])){
-            //     if(!empty(PgsqlDAO::getCard($_POST["id"]))){
-            //         PgsqlDAO::updateCardPlayed($_POST["id"]);       
-            //     }
-            //     else{
-            //         PgsqlDAO::insertNewCard($_POST["id"], $_POST["cost"], $_POST["hp"], $_POST["attack"], $_POST["mechanics"]);
-            //     }
-            // }
+            if(!empty($_POST["id"])){
+                if(!empty(PgsqlDAO::getCard($_POST["id"]))){
+                    PgsqlDAO::updateCardPlayed($_POST["id"]);       
+                }
+                else{
+                    PgsqlDAO::insertNewCard($_POST["id"], $_POST["cost"], $_POST["hp"], $_POST["attack"], $_POST["mechanics"]);
+                }
+            }
             
 
             if(!empty($_POST["HERO_POWER"])){
