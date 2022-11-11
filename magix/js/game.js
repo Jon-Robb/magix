@@ -137,6 +137,8 @@ const state = () => {
                             let formData = new FormData();
                             formData.append("PLAY", "PLAY");
                             formData.append("UID", data.hand[i].uid);
+                            let carte = data.hand[i];
+                        
                             fetch("ajax-state.php", {
                                 method: "POST",
                                 body: formData
@@ -145,21 +147,19 @@ const state = () => {
                                 .then(result => {
                                     
                                     if (typeof result != 'string' || result instanceof String) {
-                                        console.log("carte jouée");
 
-                                        let formData = new FormData();
-                                        formData.append("id", data.hand[i].id);
-                                        formData.append("cost", data.hand[i].cost);
-                                        formData.append("hp", data.hand[i].hp);
-                                        formData.append("attack", data.hand[i].atk);
-                                        formData.append("mechanics", data.hand[i].mechanics);
+                                        let formData2 = new FormData();
+                                        formData2.append("id", carte.id);
+                                        formData2.append("cost", carte.cost);
+                                        formData2.append("hp", carte.hp);
+                                        formData2.append("attack", carte.atk);
+                                        formData2.append("mechanics", carte.mechanics);
                                         
-                                        
+
                                         fetch("ajax-state.php", {
                                             method: "POST",
-                                            body: formData
+                                            body: formData2
                                         })
-                                        console.log(formData);
                                         // .then(response => response.json())555555555555555555555
                                         // .then(result => {
                                         //     console.log(formData);

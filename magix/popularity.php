@@ -11,5 +11,22 @@ require_once("partial/header.php");
     Popularity
 </h1>
 
+<div>
+    <?php
+    foreach ($data["topTen"] as $line) {
+        foreach ($line as $value) { ?>
+            <div>
+                <?= $value ?>
+            </div>
+
+    <?php
+        }
+    }
+    ?>
+
+
+
+</div>
+
 <?php
 require_once("partial/footer.php");

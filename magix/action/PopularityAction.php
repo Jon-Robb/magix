@@ -1,5 +1,6 @@
 <?php
 require_once("action/CommonAction.php");
+require_once("action/DAO/PgsqlDAO.php");
 
 class PopularityAction extends CommonAction
 {
@@ -11,7 +12,10 @@ class PopularityAction extends CommonAction
 
     protected function executeAction()
     {
+        $topTen = PgsqlDAO::getTopTen();
 
-        return [];
+        return compact("topTen");
     }
+
+    
 }
