@@ -10,6 +10,10 @@ require_once("partial/header.php");
 <script defer src="js/game.js"></script>
 
 <div class="game-body">
+
+    <div class="dialog-box">
+         
+    </div>
     <!-- section de l'adversaire -->
     <div class="ennemy-section">
         <div class="ennemy-section-cards"></div>

@@ -1,5 +1,9 @@
 let battlefieldCardSelectedUid;
 
+const remove = (element) => {
+    element.style.opacity = "0";
+}
+
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST"        // l’API (games/state)
@@ -138,14 +142,14 @@ const state = () => {
                             formData.append("PLAY", "PLAY");
                             formData.append("UID", data.hand[i].uid);
                             let carte = data.hand[i];
-                        
+
                             fetch("ajax-state.php", {
                                 method: "POST",
                                 body: formData
                             })
                                 .then(response => response.json())
                                 .then(result => {
-                                    
+
                                     if (typeof result != 'string' || result instanceof String) {
 
                                         let formData2 = new FormData();
@@ -154,23 +158,28 @@ const state = () => {
                                         formData2.append("hp", carte.hp);
                                         formData2.append("attack", carte.atk);
                                         formData2.append("mechanics", carte.mechanics);
-                                        
+
 
                                         fetch("ajax-state.php", {
                                             method: "POST",
                                             body: formData2
                                         })
-                                        // .then(response => response.json())555555555555555555555
-                                        // .then(result => {
-                                        //     console.log(formData);
-                                        // })
-
+                                    }
+                                    else {
+                                        let dialogBox = document.querySelector(".dialog-box");
+                                        dialogBox.innerHTML = result;
+                                        dialogBox.style.opacity = "1";
+                                        setTimeout(() => {
+                                            remove(dialogBox);
+                                        }, 2000);
                                     }
                                     console.log(result)
                                 })
                         }
                     }
                 }
+
+
 
                 // le champ de bataille
                 // cartes de l'ennemi
@@ -395,13 +404,12 @@ const state = () => {
                 }
             }
 
-            if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
-                window.location.replace("lobby.php")
-            }
+            // if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
+            //     window.location.replace("lobby.php")
+            // }
 
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
-
 }
 
 window.addEventListener("load", () => {

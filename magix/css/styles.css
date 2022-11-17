@@ -367,6 +367,7 @@ iframe{
     display: grid;
     grid-template-rows: 2fr 1fr 1fr;
     background: #191919;
+    border-radius: 5px;
     
 
   }
@@ -375,6 +376,7 @@ iframe{
       background: url("../img/tank-thunderbolt.jpg")   ;
     background-repeat: no-repeat;
     background-size: 100% 100% ;
+    border-radius: 5px;
   }
 
   .card-top{
@@ -628,4 +630,13 @@ iframe{
        opacity: 0.5;
    }
 
-
+   .dialog-box{
+    color: var(--usergreetings-font-color);
+    position: absolute;
+    bottom: 50vh;
+    margin-left: 10px;
+    background: #191919;
+    padding: 10px;
+    border-radius: 5px;
+    
+   }
