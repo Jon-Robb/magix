@@ -638,5 +638,6 @@ iframe{
     background: #191919;
     padding: 10px;
     border-radius: 5px;
+    opacity: 0;
     
    }

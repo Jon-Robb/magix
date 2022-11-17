@@ -12,6 +12,8 @@ const state = () => {
         .then(data => {
             console.log(data); // contient les cartes/état du jeu.
 
+            let dialogBox = document.querySelector(".dialog-box");
+
 
             if (data.opponent) {
 
@@ -150,7 +152,7 @@ const state = () => {
                                 .then(response => response.json())
                                 .then(result => {
 
-                                    if (typeof result != 'string' || result instanceof String) {
+                                    if (typeof result != 'string' || !result instanceof String) {
 
                                         let formData2 = new FormData();
                                         formData2.append("id", carte.id);
@@ -166,7 +168,6 @@ const state = () => {
                                         })
                                     }
                                     else {
-                                        let dialogBox = document.querySelector(".dialog-box");
                                         dialogBox.innerHTML = result;
                                         dialogBox.style.opacity = "1";
                                         setTimeout(() => {
@@ -256,6 +257,13 @@ const state = () => {
                                 })
                                     .then(response => response.json())
                                     .then(result => {
+
+                                        dialogBox.innerHTML = result;
+                                        dialogBox.style.opacity = "1";
+                                        setTimeout(() => {
+                                            remove(dialogBox);
+                                        }, 2000);
+                                       
                                         console.log(result);
                                     })
                             }
@@ -347,6 +355,14 @@ const state = () => {
                                 })
                                     .then(response => response.json())
                                     .then(result => {
+
+                                        dialogBox.innerHTML = result;
+                                        dialogBox.style.opacity = "1";
+                                        setTimeout(() => {
+                                            remove(dialogBox);
+                                        }, 2000);
+                                       
+
                                         console.log(result);
                                     })
                             }
@@ -404,9 +420,9 @@ const state = () => {
                 }
             }
 
-            // if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
-            //     window.location.replace("lobby.php")
-            // }
+            if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
+                window.location.replace("lobby.php")
+            }
 
             setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
