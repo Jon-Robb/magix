@@ -1,5 +1,14 @@
 let battlefieldCardSelectedUid;
 
+const backToLobby = () => {
+    window.location.replace("lobby.php");
+}
+
+const show = (element, message) => {
+    element.innerHTML = message
+    element.style.opacity = "1";
+}
+
 const remove = (element) => {
     element.style.opacity = "0";
 }
@@ -83,26 +92,47 @@ const state = () => {
                     cardPic.classList.add("card-pic");
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
-                    let cardMana = document.createElement("div");
-                    cardMana.classList.add("card-mana");
-                    let manaImg = document.createElement("img");
-                    manaImg.src = "../magix//img/health+mana/PNG/gaz.png";
-                    cardMana.append(manaImg);
-                    let manaCost = document.createElement("p");
-                    manaCost.classList.add("mana-cost");
-
                     // Ajout du mana cost de la carte 
-                    manaCost.innerHTML = data.hand[i].cost;
-                    let cardIcon = document.createElement("div");
-                    cardIcon.classList.add("card-icon");
+                    // manaCost.innerHTML = data.hand[i].cost;
+                    
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.hand[i].mechanics.includes("Taunt")) {
+                    for (let j = 0; j < data.hand[i].mechanics.length; j++){
 
-                        let icon = document.createElement("img");
-                        icon.src = "../magix/img/protection.png";
-                        cardIcon.append(icon);
+                        if (data.hand[i].mechanics[j].match("Taunt")) {
+
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/protection.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+                        }
+    
+                        if (data.hand[i].mechanics[j].match("Deathrattle")) {
+    
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/skull-and-bones.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+    
+                        }
+    
+                        if (data.hand[i].mechanics[j].match("Stealth")) {
+    
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/stealth.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+    
+                        }
                     }
+                    
+                    
 
 
                     let cardInfo = document.createElement("div");
@@ -113,16 +143,17 @@ const state = () => {
                     let cardAttack = document.createElement("div");
                     cardAttack.classList.add("card-attack");
                     cardAttack.innerHTML = data.hand[i].atk;
+                    let cardMana = document.createElement("div");
+                    cardMana.classList.add("card-mana");
+                    cardMana.innerHTML = data.hand[i].cost;
                     let cardHealth = document.createElement("div");
                     cardHealth.classList.add("card-health");
                     cardHealth.innerHTML = data.hand[i].hp;
 
                     // Assemblage de la carte
                     cardStats.append(cardAttack);
+                    cardStats.append(cardMana);
                     cardStats.append(cardHealth);
-                    cardMana.append(manaCost);
-                    cardTop.append(cardMana);
-                    cardTop.append(cardIcon);
                     cardPic.append(cardTop);
                     battlefieldCard.append(cardPic);
                     battlefieldCard.append(cardInfo);
@@ -168,8 +199,7 @@ const state = () => {
                                         })
                                     }
                                     else {
-                                        dialogBox.innerHTML = result;
-                                        dialogBox.style.opacity = "1";
+                                        show(dialogBox, result);
                                         setTimeout(() => {
                                             remove(dialogBox);
                                         }, 2000);
@@ -194,30 +224,48 @@ const state = () => {
                     cardPic.classList.add("card-pic");
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
-                    let cardMana = document.createElement("div");
-                    cardMana.classList.add("card-mana");
-                    let manaImg = document.createElement("img");
-                    manaImg.src = "../magix//img/health+mana/PNG/gaz.png";
-                    cardMana.append(manaImg);
-                    let manaCost = document.createElement("p");
-                    manaCost.classList.add("mana-cost");
 
-                    // Ajout du mana cost de la carte 
-                    manaCost.innerHTML = data.opponent.board[i].cost;
-                    let cardIcon = document.createElement("div");
-                    cardIcon.classList.add("card-icon");
+                    
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.opponent.board[i].mechanics.includes("Taunt")) {
+                    
+                    for (let j = 0; j < data.opponent.board[i].mechanics.length; j++){
+                        if (data.opponent.board[i].mechanics[j].match("Taunt")) {
 
-                        let icon = document.createElement("img");
-                        icon.src = "../magix/img/protection.png";
-                        cardIcon.append(icon);
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/protection.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+                        }
+    
+                        if (data.opponent.board[i].mechanics[j].match("Stealth")) {
+
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            battlefieldCard.style.opacity = "0.7";
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/stealth.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+                        }
+    
+                        if (data.opponent.board[i].mechanics[j].match("Deathrattle")) {
+    
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/skull-and-bones.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+
+                        }
+
                     }
 
-                    if (data.opponent.board[i].mechanics.includes("Stealth")) {
-                        battlefieldCard.style.opacity = "0.7";
-                    }
+                    
+                    
 
 
                     let cardInfo = document.createElement("div");
@@ -228,15 +276,17 @@ const state = () => {
                     let cardAttack = document.createElement("div");
                     cardAttack.classList.add("card-attack");
                     cardAttack.innerHTML = data.opponent.board[i].atk;
+                    let cardMana = document.createElement("div");
+                    cardMana.classList.add("card-mana");
+                    cardMana.innerHTML = data.opponent.board[i].cost;
                     let cardHealth = document.createElement("div");
                     cardHealth.classList.add("card-health");
                     cardHealth.innerHTML = data.opponent.board[i].hp;
 
                     cardStats.append(cardAttack);
+                    cardStats.append(cardMana);
                     cardStats.append(cardHealth);
-                    cardMana.append(manaCost);
-                    cardTop.append(cardMana);
-                    cardTop.append(cardIcon);
+            
                     cardPic.append(cardTop);
                     battlefieldCard.append(cardPic);
                     battlefieldCard.append(cardInfo);
@@ -282,28 +332,45 @@ const state = () => {
                     cardPic.classList.add("card-pic");
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
-                    let cardMana = document.createElement("div");
-                    cardMana.classList.add("card-mana");
-                    let manaImg = document.createElement("img");
-                    manaImg.src = "../magix//img/health+mana/PNG/gaz.png";
-                    cardMana.append(manaImg);
-                    let manaCost = document.createElement("p");
-                    manaCost.classList.add("mana-cost");
+                    
 
-                    // Ajout du mana cost de la carte 
-                    manaCost.innerHTML = data.board[i].cost;
                     let cardIcon = document.createElement("div");
                     cardIcon.classList.add("card-icon");
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    if (data.board[i].mechanics.includes("Taunt")) {
+                    for (let j = 0; j < data.board[i].mechanics.length; j++){
+                        if (data.board[i].mechanics[j].match("Taunt")) {
 
-                        let icon = document.createElement("img");
-                        icon.src = "../magix/img/protection.png";
-                        cardIcon.append(icon);
-                    }
-                    if (data.board[i].mechanics.includes("Stealth")) {
-                        battlefieldCard.style.opacity = "0.7";
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/protection.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+                        }
+    
+                        if (data.board[i].mechanics[j].match("Stealth")) {
+
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            battlefieldCard.style.opacity = "0.7";
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/stealth.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+                        }
+    
+                        if (data.board[i].mechanics[j].match("Deathrattle")) {
+    
+                            let cardIcon = document.createElement("div");
+                            cardIcon.classList.add("card-icon");
+                            let icon = document.createElement("img");
+                            icon.src = "../magix/img/skull-and-bones.png";
+                            cardIcon.append(icon);
+                            cardTop.append(cardIcon);
+
+                        }
+
                     }
 
 
@@ -315,15 +382,16 @@ const state = () => {
                     let cardAttack = document.createElement("div");
                     cardAttack.classList.add("card-attack");
                     cardAttack.innerHTML = data.board[i].atk;
+                    let cardMana = document.createElement("div");
+                    cardMana.classList.add("card-mana");
+                    cardMana.innerHTML = data.board[i].cost;
                     let cardHealth = document.createElement("div");
                     cardHealth.classList.add("card-health");
                     cardHealth.innerHTML = data.board[i].hp;
 
                     cardStats.append(cardAttack);
+                    cardStats.append(cardMana);
                     cardStats.append(cardHealth);
-                    cardMana.append(manaCost);
-                    cardTop.append(cardMana);
-                    cardTop.append(cardIcon);
                     cardPic.append(cardTop);
                     battlefieldCard.append(cardPic);
                     battlefieldCard.append(cardInfo);
@@ -420,11 +488,16 @@ const state = () => {
                 }
             }
 
-            if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
-                window.location.replace("lobby.php")
-            }
+            // if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
+                
+            //     show(dialogBox, data); 
 
-            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+            //     setTimeout(() => {
+            //         backToLobby();
+            //     }, 5000);
+            // }
+
+            // setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 }
 

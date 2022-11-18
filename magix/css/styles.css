@@ -357,15 +357,15 @@ iframe{
 
   .battlefield-card{
 
-    min-width: 50px;
-    max-height: 190px;
+    width: 110px;
+    height: 190px;
     width: 10%;
     height: 90%;
     border: solid black 2px;
     margin: 10px;
     border-radius: 3px;
     display: grid;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 0.5fr;
     background: #191919;
     border-radius: 5px;
     
@@ -381,18 +381,20 @@ iframe{
 
   .card-top{
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      justify-content: center;
       height: 50%;
   }
 
-  .card-mana{
+  /* .card-mana{
     
       height:100%;
       width: 50%;
       display: flex;
-  }
+  } */
   
-  .mana-cost{
+  /* .mana-cost{
       position: absolute;
       z-index: 1;
      
@@ -400,9 +402,9 @@ iframe{
         font-size: x-large;
         font-weight: bolder;
         color:black; 
-  }
+  } */
 
-  .card-attack{
+  /* .card-attack{
       background: url("../img/Gamma_Cannon.webp") no-repeat;
       background-size: 100%;
       background-position-y: -15px;
@@ -414,31 +416,37 @@ iframe{
     background-size: 50%;
     background-position-x: 20px;
     background-position-y: 10px;
-  }
+  } */
 
   
-
+/* 
   .card-mana > img{
       right: 15px;
       bottom: 5px;
-  }
+  } */
 
   .card-icon > img{
-    left: 10px;
-    bottom: 5px;
+    bottom: 10px;
+    
 }
 
   
   .card-icon{
       height: 100%;
       width: 50%;
-      text-align: end;
+      text-align: center;
   }
 
   .card-icon > img, .card-mana > img{
       max-height: 100%;
       max-width: 100%;
       position: relative;
+
+  }
+
+  .player-card{
+    width: 100px;
+    height: 125px;
 
   }
 
@@ -450,27 +458,40 @@ iframe{
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-size: smaller;
+      font-size: xx-small;
       
   }
 
   .card-stats{
       display: flex;
-      align-items: flex-end;
+      /* align-items: flex-end; */
       justify-content: space-between;
   }
 
-  .card-health, .card-attack{
+  .card-health, .card-attack, .card-mana{
       width: 50%;
       height: 100%;
       display: flex;
       align-items: flex-end;
+      justify-content: center;
       color: var(--usergreetings-font-color);
+      padding: 1px;
+      margin: 1px;
+      border-radius: 50%;
+  }
+
+  .card-attack{
+    background-color: #8b0000
+  }
+  
+  .card-mana{
+    background-color: #00008b;
   }
 
   .card-health{
-      justify-content: flex-end;
+    background-color: #013220;
   }
+  
 
 
   .battlefield-player-cards-box{
@@ -569,12 +590,12 @@ iframe{
         align-items: center;
    }
 
-   .player-hand-card{
-       width: 10%;
-        height: 75%;
+   /* .player-hand-card{
+       min-width: 100px;
+       max-height: 125px;
         border: solid black 2px;
         margin: 1px;
-   }
+   } */
 
    .player-btn-section{
        display: grid;
