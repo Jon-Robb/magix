@@ -674,3 +674,10 @@ iframe{
     height: fit-content;
     justify-content: center;
    }
+   
+   .game-chatbox{
+    position: absolute;
+    top: 35vh; 
+    left: 50vw;
+    opacity: 0; 
+   }

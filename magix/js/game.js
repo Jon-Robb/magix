@@ -13,6 +13,24 @@ const remove = (element) => {
     element.style.opacity = "0";
 }
 
+let playerBtnChat = document.querySelector(".player-btn-chat");
+let chatBox = document.querySelector(".game-chatbox");
+let chatVisible = false;
+
+playerBtnChat.onclick = () => {
+    if (!chatVisible) {
+        chatBox.style.opacity = '1';
+        chatVisible = true;
+    }
+    else {
+        chatBox.style.opacity = '0';
+        chatVisible = false;
+    }
+}
+
+
+
+
 const state = () => {
     fetch("ajax-state.php", {   // Il faut créer cette page et son contrôleur appelle 
         method: "POST"        // l’API (games/state)
@@ -499,7 +517,7 @@ const state = () => {
 
             if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
 
-                show(dialogBox, data); 
+                show(dialogBox, data);
 
                 setTimeout(() => {
                     backToLobby();

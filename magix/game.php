@@ -11,6 +11,13 @@ require_once("partial/header.php");
 
 <div class="game-body">
 
+    <div class="game-chatbox">
+    <iframe onload="applyStyles(this)" style="width:700px;height:240px;" 
+        src="https://magix.apps-de-cours.com/server/#/chat/<?= $data["key"] ?>">
+    </iframe>
+
+    </div>
+
     <div class="dialog-box">
          
     </div>

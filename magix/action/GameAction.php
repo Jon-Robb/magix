@@ -11,7 +11,9 @@ class GameAction extends CommonAction
 
     protected function executeAction()
     {
-
-        return [];
+        $key = $_SESSION["key"];
+        $data = [];
+        $data["key"] = $key;
+        return compact("key");
     }
 }
