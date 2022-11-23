@@ -94,10 +94,10 @@ const state = () => {
                     cardTop.classList.add("card-top");
                     // Ajout du mana cost de la carte 
                     // manaCost.innerHTML = data.hand[i].cost;
-                    
+
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    for (let j = 0; j < data.hand[i].mechanics.length; j++){
+                    for (let j = 0; j < data.hand[i].mechanics.length; j++) {
 
                         if (data.hand[i].mechanics[j].match("Taunt")) {
 
@@ -108,31 +108,31 @@ const state = () => {
                             cardIcon.append(icon);
                             cardTop.append(cardIcon);
                         }
-    
+
                         if (data.hand[i].mechanics[j].match("Deathrattle")) {
-    
+
                             let cardIcon = document.createElement("div");
                             cardIcon.classList.add("card-icon");
                             let icon = document.createElement("img");
                             icon.src = "../magix/img/skull-and-bones.png";
                             cardIcon.append(icon);
                             cardTop.append(cardIcon);
-    
+
                         }
-    
+
                         if (data.hand[i].mechanics[j].match("Stealth")) {
-    
+
                             let cardIcon = document.createElement("div");
                             cardIcon.classList.add("card-icon");
                             let icon = document.createElement("img");
                             icon.src = "../magix/img/stealth.png";
                             cardIcon.append(icon);
                             cardTop.append(cardIcon);
-    
+
                         }
                     }
-                    
-                    
+
+
 
 
                     let cardInfo = document.createElement("div");
@@ -197,6 +197,11 @@ const state = () => {
                                             method: "POST",
                                             body: formData2
                                         })
+
+                                            .then(response => response.json())
+                                            .then(result => {
+
+                                            })
                                     }
                                     else {
                                         show(dialogBox, result);
@@ -225,11 +230,11 @@ const state = () => {
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
 
-                    
+
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    
-                    for (let j = 0; j < data.opponent.board[i].mechanics.length; j++){
+
+                    for (let j = 0; j < data.opponent.board[i].mechanics.length; j++) {
                         if (data.opponent.board[i].mechanics[j].match("Taunt")) {
 
                             let cardIcon = document.createElement("div");
@@ -239,7 +244,7 @@ const state = () => {
                             cardIcon.append(icon);
                             cardTop.append(cardIcon);
                         }
-    
+
                         if (data.opponent.board[i].mechanics[j].match("Stealth")) {
 
                             let cardIcon = document.createElement("div");
@@ -250,9 +255,9 @@ const state = () => {
                             cardIcon.append(icon);
                             cardTop.append(cardIcon);
                         }
-    
+
                         if (data.opponent.board[i].mechanics[j].match("Deathrattle")) {
-    
+
                             let cardIcon = document.createElement("div");
                             cardIcon.classList.add("card-icon");
                             let icon = document.createElement("img");
@@ -264,8 +269,8 @@ const state = () => {
 
                     }
 
-                    
-                    
+
+
 
 
                     let cardInfo = document.createElement("div");
@@ -286,7 +291,7 @@ const state = () => {
                     cardStats.append(cardAttack);
                     cardStats.append(cardMana);
                     cardStats.append(cardHealth);
-            
+
                     cardPic.append(cardTop);
                     battlefieldCard.append(cardPic);
                     battlefieldCard.append(cardInfo);
@@ -307,13 +312,15 @@ const state = () => {
                                 })
                                     .then(response => response.json())
                                     .then(result => {
+                                        if (typeof result == 'string' || result instanceof String) {
+                                            dialogBox.innerHTML = result;
+                                            dialogBox.style.opacity = "1";
+                                            setTimeout(() => {
+                                                remove(dialogBox);
+                                            }, 2000);
 
-                                        dialogBox.innerHTML = result;
-                                        dialogBox.style.opacity = "1";
-                                        setTimeout(() => {
-                                            remove(dialogBox);
-                                        }, 2000);
-                                       
+                                        }
+
                                         console.log(result);
                                     })
                             }
@@ -332,13 +339,13 @@ const state = () => {
                     cardPic.classList.add("card-pic");
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
-                    
+
 
                     let cardIcon = document.createElement("div");
                     cardIcon.classList.add("card-icon");
 
                     // si la carte a une mécanique spéciale, on ajoute l'icone appropriée
-                    for (let j = 0; j < data.board[i].mechanics.length; j++){
+                    for (let j = 0; j < data.board[i].mechanics.length; j++) {
                         if (data.board[i].mechanics[j].match("Taunt")) {
 
                             let cardIcon = document.createElement("div");
@@ -348,7 +355,7 @@ const state = () => {
                             cardIcon.append(icon);
                             cardTop.append(cardIcon);
                         }
-    
+
                         if (data.board[i].mechanics[j].match("Stealth")) {
 
                             let cardIcon = document.createElement("div");
@@ -359,9 +366,9 @@ const state = () => {
                             cardIcon.append(icon);
                             cardTop.append(cardIcon);
                         }
-    
+
                         if (data.board[i].mechanics[j].match("Deathrattle")) {
-    
+
                             let cardIcon = document.createElement("div");
                             cardIcon.classList.add("card-icon");
                             let icon = document.createElement("img");
@@ -423,13 +430,15 @@ const state = () => {
                                 })
                                     .then(response => response.json())
                                     .then(result => {
+                                        if (typeof result == 'string' || result instanceof String) {
 
-                                        dialogBox.innerHTML = result;
-                                        dialogBox.style.opacity = "1";
-                                        setTimeout(() => {
-                                            remove(dialogBox);
-                                        }, 2000);
-                                       
+                                            dialogBox.innerHTML = result;
+                                            dialogBox.style.opacity = "1";
+
+                                            setTimeout(() => {
+                                                remove(dialogBox);
+                                            }, 2000);
+                                        }
 
                                         console.log(result);
                                     })
@@ -488,16 +497,16 @@ const state = () => {
                 }
             }
 
-            // if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
-                
-            //     show(dialogBox, data); 
+            if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
 
-            //     setTimeout(() => {
-            //         backToLobby();
-            //     }, 5000);
-            // }
+                show(dialogBox, data); 
 
-            // setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
+                setTimeout(() => {
+                    backToLobby();
+                }, 5000);
+            }
+
+            setTimeout(state, 1000); // Attendre 1 seconde avant de relancer l’appel
         })
 }
 
