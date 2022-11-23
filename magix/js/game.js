@@ -1,5 +1,6 @@
 let battlefieldCardSelectedUid;
 
+// Quelques fonctions utiles
 const backToLobby = () => {
     window.location.replace("lobby.php");
 }
@@ -13,22 +14,25 @@ const remove = (element) => {
     element.style.opacity = "0";
 }
 
+// Logique du toggle button pour le chat
 let playerBtnChat = document.querySelector(".player-btn-chat");
 let chatBox = document.querySelector(".game-chatbox");
 let chatVisible = false;
-
 playerBtnChat.onclick = () => {
-    if (!chatVisible) {
+    if(!chatVisible){
         chatBox.style.opacity = '1';
         chatVisible = true;
     }
-    else {
+    else{
         chatBox.style.opacity = '0';
         chatVisible = false;
     }
 }
 
 
+let imgList = ['url("./img/cartes/tank-thunderbolt.jpg")', 'url("img/chinese_tank_by_sinto_risky_d9uojbp.jpg")'];
+let random = Math.floor(Math.random() * imgList.length);
+console.log(random, imgList[random]);
 
 
 const state = () => {
@@ -108,6 +112,9 @@ const state = () => {
                     battlefieldCard.classList.add("player-card");
                     let cardPic = document.createElement("div");
                     cardPic.classList.add("card-pic");
+                    cardPic.style.background = imgList[random];
+                    cardPic.style.backgroundRepeat = 'no repeat';
+                    cardPic.style.backgroundSize = 'cover';
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
                     // Ajout du mana cost de la carte 
@@ -244,6 +251,9 @@ const state = () => {
                     let battlefieldCard = document.createElement("div");
                     battlefieldCard.classList.add("battlefield-card");
                     let cardPic = document.createElement("div");
+                    cardPic.style.background = imgList[random];
+                    cardPic.style.backgroundRepeat = 'no repeat';
+                    cardPic.style.backgroundSize = 'cover';
                     cardPic.classList.add("card-pic");
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
@@ -354,7 +364,11 @@ const state = () => {
                     let battlefieldCard = document.createElement("div");
                     battlefieldCard.classList.add("battlefield-card");
                     let cardPic = document.createElement("div");
+                    cardPic.style.background = imgList[random];
+                    cardPic.style.backgroundRepeat = 'no repeat';
+                    cardPic.style.backgroundSize = 'cover';
                     cardPic.classList.add("card-pic");
+                    cardPic.style.background = "url"
                     let cardTop = document.createElement("div");
                     cardTop.classList.add("card-top");
 
@@ -517,7 +531,7 @@ const state = () => {
 
             if (data == "LAST_GAME_LOST" || data == "LAST_GAME_WON") {
 
-                show(dialogBox, data);
+                show(dialogBox, data); 
 
                 setTimeout(() => {
                     backToLobby();

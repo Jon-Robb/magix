@@ -27,12 +27,12 @@ require_once("partial/header.php");
         <div class="ennemy-name"></div>
         <div class="ennemy-pic-box">
             <div class="ennemy-pic">
-                <!-- <img src="./img/classes-img/warrior-atlas-icon.png" alt=""> -->
+                <img src="./img/classes-img/warrior-atlas.jpg" alt="">
             </div>
         </div>
 
         <div class="ennemy-class">
-            Warrior
+            
         </div>
         <div class="ennemy-components">
             <div class="ennemy-life"></div>
