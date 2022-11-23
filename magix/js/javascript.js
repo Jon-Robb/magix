@@ -1,15 +1,15 @@
 const applyStyles = iframe => {
 	let styles = {
-		fontColor: "#333",
+		fontColor: "#d0902f",
 		backgroundColor: "rgba(87, 41, 5, 0.2)",
 		fontGoogleName: "Sofia",
 		fontSize: "15px",
-		hideIcons: false, //(or true),
-		inputBackgroundColor: "white",
-		inputFontColor: "black",
+		hideIcons: true, //(or true),
+		inputBackgroundColor: "##191919",
+		inputFontColor: "#d0902f",
 		height: "1000px",
-		memberListFontColor: "#ff00dd",
-		memberListBackgroundColor: "white"
+		memberListFontColor: "##d0902f",
+		memberListBackgroundColor: "#d0902f"
 	}
 
 	setTimeout(() => {
