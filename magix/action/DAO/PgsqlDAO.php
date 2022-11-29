@@ -53,20 +53,30 @@ class PgsqlDAO
         $statement->execute();
     }
 
-    public static function deleteAndCreateTable()
+    public static function deleteTable()
     {
 
         $connection = Connection::getConnection();
 
         $statement = $connection->prepare(
-            "DROP TABLE IF EXISTS most_used_cards;
-            CREATE TABLE most_used_cards(
+            "DROP TABLE IF EXISTS most_used_cards;"
+        );
+
+        $statement->execute();
+    }
+
+    public static function createTable(){
+        $connection = Connection::getConnection();
+
+        $statement = $connection->prepare(
+            "CREATE TABLE most_used_cards (
                 id SMALLINT PRIMARY KEY,
                 cost SMALLINT NOT NULL,
                 hp SMALLINT NOT NULL,
                 attack SMALLINT NOT NULL,
                 mechanics VARCHAR,
-                nb_fois_utilise SMALLINT DEFAULT 1);"
+                nb_fois_utilise SMALLINT DEFAULT 1
+            );"
         );
 
         $statement->execute();
@@ -88,4 +98,35 @@ class PgsqlDAO
         return $statement->fetchAll();
 
     }
+
+    public static function getSum(){
+        $connection = Connection::getConnection();
+
+        $statement = $connection->prepare(
+            "SELECT SUM(nb_fois_utilise) FROM most_used_cards;"
+        );
+
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $statement->execute();
+
+        return $statement->fetchAll();
+    }
+
+    public static function getUsage(){
+
+        $connection = Connection::getConnection();
+
+        $statement = $connection->prepare(
+            "SELECT nb_fois_utilise FROM most_used_cards
+            ORDER BY nb_fois_utilise
+            DESC LIMIT 10;"
+        );
+
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $statement->execute();
+
+        return $statement->fetchAll();
+
+    }
+
 }

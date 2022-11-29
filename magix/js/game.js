@@ -217,16 +217,17 @@ const state = () => {
                                         formData2.append("attack", carte.atk);
                                         formData2.append("mechanics", carte.mechanics);
 
-
-                                        fetch("ajax-state.php", {
-                                            method: "POST",
-                                            body: formData2
-                                        })
-
-                                            .then(response => response.json())
-                                            .then(result => {
-
+                                        
+                                            fetch("ajax-state.php", {
+                                                method: "POST",
+                                                body: formData2
                                             })
+                                            // .then(response => response.json())
+                                            // .then(result => {
+
+                                            // })
+
+                                            
                                     }
                                     else {
                                         show(dialogBox, result);
@@ -236,7 +237,11 @@ const state = () => {
                                     }
                                     console.log(result)
                                 })
+                                
+                                
                         }
+
+                       
                     }
                 }
 
@@ -296,8 +301,6 @@ const state = () => {
                         }
 
                     }
-
-
 
 
 

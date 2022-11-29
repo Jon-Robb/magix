@@ -12,9 +12,20 @@ class PopularityAction extends CommonAction
 
     protected function executeAction()
     {
+
+        if (!empty($_POST["btn-detruire"])) {
+            PgsqlDAO::deleteTable();
+            PgsqlDAO::createTable();
+        }
+
         $topTen = PgsqlDAO::getTopTen();
 
-        return compact("topTen");
+        $sum = PgsqlDAO::getSum();
+       
+
+    
+
+        return compact("topTen", "sum");
     }
 
     

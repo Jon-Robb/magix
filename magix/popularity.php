@@ -1,6 +1,10 @@
 <?php
 require_once("action/PopularityAction.php");
 require_once("partial/header.php");
+
+$action = new PopularityAction();
+$data = $action->execute();
+
 ?>
 
 <div class="popularity-body">
@@ -9,6 +13,12 @@ require_once("partial/header.php");
         <h1>
             Cartes les plus populaires
         </h1>
+        <form action="" method="POST" name="btn-detruire">
+                    <input type="hidden" name="btn-detruire" value="true">
+                    <button class="btn-lobby btn-detruire">
+                        Détruire
+                    </button>
+                </form>
     </div>
     <div class="palmares">
         <div class="palmares-titles palmares-line">
@@ -30,36 +40,26 @@ require_once("partial/header.php");
             <h3>
                 Times played
             </h3>
-            <h3>
-                Ratio
-            </h3>
+            
         </div>
-        <div class="palmares-line">
-            <p>
-                28
-            </p>
-            <p>
-                4
-            </p>
-            <p>
-                8
-            </p>
-            <p>
-                3
-            </p>
-            <p>
-                DeathRattle : Summon a 7/7 minion with taunt
-            </p>
-            <p>
-                234
-            </p>
-            <p>
-                58.8%
-            </p>
+        <div class="palmares-lines">
+        <?php
+            foreach ($data["topTen"] as $line){?>
+
+            <div class="palmares-line">
+                <?php
+                    foreach ($line as $value){?>
+                        <p><?= $value ?></p>
+                    <?php
+                        }
+                    ?>
+                
+            </div>
+            <?php
+                }
+            ?>
         </div>
     </div>
-
-
 </div>
 
 
