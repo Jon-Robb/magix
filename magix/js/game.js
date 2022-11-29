@@ -226,7 +226,6 @@ const state = () => {
                                             // .then(result => {
 
                                             // })
-
                                             
                                     }
                                     else {
@@ -237,15 +236,10 @@ const state = () => {
                                     }
                                     console.log(result)
                                 })
-                                
-                                
-                        }
-
-                       
+                                              
+                        }                    
                     }
                 }
-
-
 
                 // le champ de bataille
                 // cartes de l'ennemi
