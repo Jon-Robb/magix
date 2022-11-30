@@ -159,7 +159,7 @@ const state = () => {
 
 
 
-
+                    
                     let cardInfo = document.createElement("div");
                     cardInfo.classList.add("card-infos");
                     cardInfo.innerHTML = data.hand[i].mechanics;
@@ -481,7 +481,7 @@ const state = () => {
                 timer.innerHTML = "";
                 timer.innerHTML = data.remainingTurnTime;
 
-                // hero power
+                // hero power et autres boutons
 
                 let heroPower = document.querySelector(".player-btn-heropower");
 
