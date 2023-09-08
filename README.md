@@ -21,11 +21,15 @@
 
 
 <!-- PROJECT LOGO -->
+<p align="center">
+  <img src="./images/magix_logo.jpeg" alt="Logo">
+</p>
+
 <br />
 <div align="center">
 
 
-<h3 align="center">Magix</h3>
+<h1 align="center">Magix</h1>
 
   <p align="center">
     A multiplayer card game, akin to Hearthstone, that interfaces with a database and a server's API to retrieve and display the game's current state.tion
@@ -53,8 +57,14 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+  <p align="justify">
+    In this project, I worked on developing a multiplayer card game inspired by popular titles like Hearthstone. The unique aspect was that students could connect to the professor's API, opening up creative opportunities. We used a PHP backend and incorporated AJAX for real-time updates. Students were tasked with designing their local game logic and user interfaces. As the class progressed, we organized an exciting tournament where our custom card games went head-to-head. It was an educational journey that not only improved our technical skills but also created a sense of camaraderie and competition, making it a memorable experience.
+  </p>
+  <p align="justify">
+   Since the project's due date, I haven't made any modifications to the code, but I'm proud of the   project nonetheless. It marked my first experience with making API calls and setting up backend components. I'd like to extend my heartfelt thanks to my professor, <a href="https://github.com/ftheriault"> Frederic Theriault</a>, who proved to be one of the most dedicated educators I've encountered. His commitment to our learning was exemplified by his effort in coding an entire game for the benefit of his students.
+  </p>
 
-![Product Name Screen Shot][product-screenshot]
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -75,9 +85,27 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<p align="justify">
+  As said previously, the game is not playable for the general public. However, I've included some screenshots to give you an idea of what the game looks like. The game's objective is to reduce your opponent's health to zero. You can do this by playing cards that deal damage to your opponent or by playing cards that heal yourself. The game is turn-based, and each player has a maximum of 10 mana to spend each turn. The game ends when one player's health reaches zero.
+</p>
+<h3>I chose BattleTech as a theme for my game design as I am a fan of the franchise.</h3>
+<br/>
+<h3> Login Screen </h3>
+<p align="center">
+  <img src="./images/magix_login.jpeg" alt="Login Screen">
+</p>
+<br/>
+<h3> Lobby Screen </h3>
+<p align="center">
+  <img src="./images/magix_lobby.jpeg" alt="Lobby Screen">
+</p>
+<br/>
+<h3> Game Board </h3>
+<p align="center">
+  <img src="./images/magix_boardpic.jpeg" alt="Game Board">
+</p>
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -86,7 +114,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- CONTACT -->
 ## Contact
 
-Jonathan Robinson - [![LinkedIn][linkedin-shield]][linkedin-url] - 
+[![LinkedIn][linkedin-shield]][linkedin-url] 
+[![Gmail][gmail-shield]][gmail-url]
+[![Portfolio][portfolio-shield]][portfolio-url]
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -98,6 +129,11 @@ Jonathan Robinson - [![LinkedIn][linkedin-shield]][linkedin-url] -
 <!-- images -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/jonathan-robinson-187716274
+[gmail-shield]:	https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[portfolio-shield]:https://img.shields.io/badge/website-000000?style=for-the-badge&logo=About.me&logoColor=white
+[portfolio-url]: https://jonrobinson.ca
+
+[gmail-url]: mailto:robinsonjonathan240817@gmail.com
 [img_ingame]: images\magix_boardpic.jpeg
 [img_login]: images\magix_login.jpeg
 [img_lobby]: images\magix_lobby.jpeg
